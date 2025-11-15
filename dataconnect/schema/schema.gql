@@ -1,0 +1,50 @@
+type User @table {
+  email: String!
+  displayName: String!
+  createdAt: Timestamp!
+  photoUrl: String
+  ufrjId: String
+  isOrganizer: Boolean
+}
+
+type EventDay @table {
+  date: Date!
+  name: String!
+  createdAt: Timestamp!
+  description: String
+}
+
+type Activity @table {
+  eventDay: EventDay!
+  title: String!
+  startTime: Timestamp!
+  endTime: Timestamp!
+  type: String!
+  location: String!
+  createdAt: Timestamp!
+  description: String
+  track: String
+  capacity: Int
+}
+
+type Speaker @table {
+  name: String!
+  bio: String!
+  createdAt: Timestamp!
+  organization: String
+  title: String
+  photoUrl: String
+  socialMediaLink: String
+}
+
+type ActivitySpeaker @table(key: ["activity", "speaker"]) {
+  activity: Activity!
+  speaker: Speaker!
+}
+
+type Registration @table(key: ["user", "activity"]) {
+  user: User!
+  activity: Activity!
+  registeredAt: Timestamp!
+  status: String
+}
