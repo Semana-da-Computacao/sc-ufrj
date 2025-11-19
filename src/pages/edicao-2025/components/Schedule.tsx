@@ -10,7 +10,7 @@ interface ScheduleProps {
 
 export default function Schedule({ schedule }: ScheduleProps) {
   return (
-    <section>
+    <section className="max-w-4xl mx-auto px-4 py-8">
       <h2 className="text-2xl font-semibold mb-4">Programação</h2>
       <div className="grid gap-6">
         {schedule.map((day, index) => (

@@ -18,8 +18,8 @@ export function Hero2025() {
           <div className="max-w-3xl mx-auto">
             <div className="bg-transparent border-0 text-white p-6 md:p-10 rounded-2xl">
               <div className="text-center space-y-4">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold">
-                  Semana da Computação — UFRJ 2025
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono">
+                  Semana da Computação UFRJ 2025
                 </h1>
                 <p className="text-md sm:text-lg lg:text-xl text-white/90">
                   5 dias com palestras, workshops e networking para estudantes e
