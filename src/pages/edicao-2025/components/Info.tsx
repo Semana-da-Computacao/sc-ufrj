@@ -3,9 +3,10 @@ import ScrollReveal from "./ScrollReveal";
 interface InfoProps {
   date: string;
   location: string;
+  about?: string;
 }
 
-export default function Info({ date, location }: InfoProps) {
+export default function Info({ date, location, about }: InfoProps) {
   return (
     <section
       id="informacoes"
@@ -41,6 +42,9 @@ export default function Info({ date, location }: InfoProps) {
               Auditórios e laboratórios com infraestrutura completa.
             </p>
           </ScrollReveal>
+        </div>
+        <div>
+          <p>{about} </p>
         </div>
       </div>
     </section>

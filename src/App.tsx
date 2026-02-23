@@ -4,6 +4,7 @@ import HomePage from "./pages/geral/HomePage";
 import Edicao2025Page from "./pages/edicao-2025";
 import Layout from "./components/layout/geral/Layout";
 import Layout2025 from "./pages/edicao-2025/layout/Layout2025";
+import LoginPage from "./pages/geral/LoginPage";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Layout2025>
           }
         />
+
+        {/* ROTAS DE ADMINISTRAÇÃO */}
+        <Route path="/admin" element={<LoginPage />} />
       </Routes>
     </ThemeProvider>
   );
