@@ -5,8 +5,6 @@ import { Input } from "@/components/ui/input";
 import { IceCream } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import React from "react"; // Necessário para tipagem de eventos
-import { login } from "@/services/authService";
 
 export default function LoginPage() {
   // Tipagem explícita para os estados
@@ -22,16 +20,7 @@ export default function LoginPage() {
     setError(null);
     setIsLoggingIn(true);
 
-    try {
-      await login(email, password)
-      navigate("/admin/dashboard", { replace: true });
 
-    } catch (err: any) {
-      console.error("Erro de login:", err);
-      setError(err?.message || "Falha ao tentar entrar. Verifique suas credenciais.");
-    } finally {
-      setIsLoggingIn(false);
-    }
   };
 
   return (
