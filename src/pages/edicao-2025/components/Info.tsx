@@ -22,30 +22,44 @@ export default function Info({ date, location, about }: InfoProps) {
           </p>
         </ScrollReveal>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 max-w-4xl mx-auto">
+        <div className="mt-10 grid gap-5 md:grid-cols-3 max-w-5xl mx-auto">
           <ScrollReveal className="event-card" delay={100} direction="left">
             <p className="text-xs tracking-[0.2em] uppercase text-cyan-600 dark:text-cyan-400">
               Data
             </p>
             <h3 className="mt-3 text-2xl font-semibold">{date}</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Segunda a sexta com atividades ao longo do dia.
+              Programação distribuída ao longo de cinco dias.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal className="event-card" delay={180} direction="right">
+          <ScrollReveal className="event-card" delay={180} direction="up">
             <p className="text-xs tracking-[0.2em] uppercase text-cyan-600 dark:text-cyan-400">
               Local
             </p>
             <h3 className="mt-3 text-2xl font-semibold">{location}</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Auditórios e laboratórios com infraestrutura completa.
+              Centro de Ciências Matemáticas e da Natureza (CCMN).
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal className="event-card" delay={260} direction="right">
+            <p className="text-xs tracking-[0.2em] uppercase text-cyan-600 dark:text-cyan-400">
+              Status
+            </p>
+            <h3 className="mt-3 text-2xl font-semibold">Inscrições encerradas</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Acompanhe a próxima edição pelos canais oficiais.
             </p>
           </ScrollReveal>
         </div>
-        <div>
-          <p>{about} </p>
-        </div>
+
+        <ScrollReveal
+          className="event-card mt-6 max-w-5xl mx-auto text-left md:text-center"
+          delay={320}
+        >
+          <p className="text-sm sm:text-base leading-relaxed">{about}</p>
+        </ScrollReveal>
       </div>
     </section>
   );

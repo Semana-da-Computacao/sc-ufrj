@@ -1,23 +1,35 @@
+import ScrollReveal from "@/components/scroll-reveal";
+
 export default function Stats() {
   const stats = [
-    { number: "15+", label: "Edições" },
-    { number: "1000+", label: "Participantes por Edição" },
-    { number: "50+", label: "Palestras e Workshops" },
-    { number: "30+", label: "Empresas Parceiras" },
+    { number: "15+", label: "Edições realizadas" },
+    { number: "1000+", label: "Participantes por edição" },
+    { number: "50+", label: "Palestras e workshops" },
+    { number: "30+", label: "Empresas parceiras" },
   ];
 
   return (
-    <section className="bg-muted py-16">
+    <section className="py-20 md:py-24">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Nossos Números</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <ScrollReveal className="text-center mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold md:text-4xl">Nossos Números</h2>
+          <p className="mt-3 text-muted-foreground">
+            Indicadores que mostram o impacto da Semana da Computação na
+            formação e na comunidade tecnológica.
+          </p>
+        </ScrollReveal>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-10">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">
+            <ScrollReveal
+              key={stat.label}
+              delay={80 + index * 60}
+              className="event-card text-center"
+            >
+              <div className="text-4xl font-black text-cyan-600 dark:text-cyan-400 mb-2">
                 {stat.number}
               </div>
-              <div className="text-lg">{stat.label}</div>
-            </div>
+              <div className="text-sm md:text-base">{stat.label}</div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

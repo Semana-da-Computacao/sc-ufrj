@@ -57,6 +57,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/2019" className="text-sm hover:underline">
+                  Edição 2019
+                </Link>
+              </li>
+              <li>
                 <Link to="/#sobre" className="text-sm hover:underline">
                   Sobre
                 </Link>

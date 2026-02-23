@@ -1,5 +1,3 @@
-import ScrollReveal from "./ScrollReveal";
-
 interface ScheduleDay {
   day: string;
   theme: string;

@@ -5,53 +5,54 @@ import Subscribe from "./components/Subscribe";
 
 export default function Edicao2025Page() {
   const eventDetails = {
-    date: "21 a 25 de Outubro de 2025",
-    location: "Instituto de Computação - UFRJ",
-    about: "A Semana da Computação é um evento anual que reúne especialistas, estudantes e entusiastas da área de tecnologia. Em 2025, o evento focará em inovações tecnológicas, desenvolvimento de software e tendências emergentes no setor de computação.",
+    date: "31 de Março a 04 de Abril de 2025",
+    location: "CCMN - UFRJ, Ilha do Fundão",
+    about:
+      "A Semana da Computação da UFRJ reúne a comunidade acadêmica e o mercado em uma programação com palestras, workshops e espaços de networking. A proposta é aproximar teoria e prática com conteúdo ministrado por professores, ex-alunos e profissionais da área.",
     schedule: [
       {
         day: "Segunda-feira",
-        theme: "Inovação e Tecnologia",
+        theme: "Abertura e tendências em tecnologia",
         highlights: [
-          "Cerimônia de Abertura",
-          "Keynote: O Futuro da IA",
-          "Workshop: Machine Learning na Prática",
+          "Recepção e abertura do evento",
+          "Palestras com profissionais convidados",
+          "Debates sobre cenário atual da computação",
         ],
       },
       {
         day: "Terça-feira",
-        theme: "Desenvolvimento e DevOps",
+        theme: "Desenvolvimento de software",
         highlights: [
-          "Palestra: Arquitetura de Microserviços",
-          "Workshop: Docker & Kubernetes",
-          "Painel: Carreira em Tech",
+          "Boas práticas de engenharia de software",
+          "Workshops práticos de desenvolvimento",
+          "Discussões sobre carreira em tecnologia",
         ],
       },
       {
         day: "Quarta-feira",
         theme: "Dados e Inteligência Artificial",
         highlights: [
-          "Talk: IA Generativa aplicada a produtos",
-          "Workshop: Engenharia de Prompts",
-          "Mesa-redonda: Ética e privacidade",
+          "Aplicações de IA no mercado",
+          "Sessões técnicas com estudos de caso",
+          "Mesa-redonda sobre ética e impacto social",
         ],
       },
       {
         day: "Quinta-feira",
         theme: "Design, Produto e UX",
         highlights: [
-          "Palestra: Produto guiado por métricas",
-          "Workshop: Prototipação rápida",
-          "Painel: Carreiras multidisciplinares",
+          "Integração entre produto e tecnologia",
+          "Atividades colaborativas e oficinas",
+          "Carreiras multidisciplinares em times tech",
         ],
       },
       {
         day: "Sexta-feira",
         theme: "Mercado e Futuro da Computação",
         highlights: [
-          "Keynote de encerramento",
-          "Sessão de networking com empresas",
-          "Desafio final e premiações",
+          "Painéis com ex-alunos e empresas",
+          "Networking entre estudantes e profissionais",
+          "Encerramento e próximos passos da comunidade",
         ],
       },
     ],
@@ -60,7 +61,11 @@ export default function Edicao2025Page() {
   return (
     <main className="relative">
       <Hero2025 />
-      <Info date={eventDetails.date} location={eventDetails.location} about={eventDetails.about} />
+      <Info
+        date={eventDetails.date}
+        location={eventDetails.location}
+        about={eventDetails.about}
+      />
       <Schedule schedule={eventDetails.schedule} />
       <Subscribe />
     </main>

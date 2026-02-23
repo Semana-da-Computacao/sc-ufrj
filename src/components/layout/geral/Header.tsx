@@ -23,6 +23,7 @@ export default function Header() {
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <Link to="/2025">Edição 2025</Link>
+            <Link to="/2019">Edição 2019</Link>
             <Link to="/#sobre">Sobre</Link>
             <Link to="/#parceiros">Parceiros</Link>
             <Link to="/fotos">Galeria</Link>
@@ -52,6 +53,9 @@ export default function Header() {
             <div className="mt-6 flex flex-col space-y-4">
               <Link to="/2025" className="text-sm font-medium">
                 Edição 2025
+              </Link>
+              <Link to="/2019" className="text-sm font-medium">
+                Edição 2019
               </Link>
               <Link to="/#sobre" className="text-sm font-medium">
                 Sobre

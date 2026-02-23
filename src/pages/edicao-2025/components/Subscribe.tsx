@@ -11,10 +11,10 @@ export default function Subscribe() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(2,132,199,0.16),transparent_38%),radial-gradient(circle_at_18%_70%,rgba(37,99,235,0.18),transparent_35%)]" />
       <div className="relative container mx-auto px-4">
         <ScrollReveal className="mx-auto max-w-3xl rounded-3xl border border-border/70 bg-card/80 p-6 md:p-10 text-center shadow-xl backdrop-blur-sm">
-          <h2 className="text-3xl md:text-4xl font-bold">Inscrições</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Próxima edição</h2>
           <p className="mt-3 text-muted-foreground">
-            As inscrições para a edição 2025 serão abertas em breve. Receba um
-            aviso no lançamento.
+            As inscrições da edição 2025 já foram encerradas. Deixe seu e-mail
+            para ser avisado sobre a próxima Semana da Computação.
           </p>
 
           <form
@@ -28,7 +28,7 @@ export default function Subscribe() {
               aria-label="Digite seu e-mail"
             />
             <Button type="submit" size="lg" className="h-11 px-7">
-              Avise-me quando abrir
+              Quero aviso da próxima edição
             </Button>
           </form>
         </ScrollReveal>

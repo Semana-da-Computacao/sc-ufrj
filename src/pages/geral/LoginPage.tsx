@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { IceCream } from "lucide-react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   // Tipagem explícita para os estados
@@ -12,7 +11,6 @@ export default function LoginPage() {
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null); // Pode ser string (mensagem de erro) ou null
   const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
-  const navigate = useNavigate();
 
   // Tipagem do evento de formulário
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
