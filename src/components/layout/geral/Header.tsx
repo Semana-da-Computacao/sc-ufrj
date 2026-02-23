@@ -5,13 +5,15 @@ import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Header() {
+  const logoSrc = `${import.meta.env.BASE_URL}Logo_SC_2025_DVPF.svg`;
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="container flex h-14 items-center mx-auto">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
             <img
-              src="/Logo_SC_2025_DVPF.svg"
+              src={logoSrc}
               alt="Logo Semana da Computação"
               className="h-6"
             />
@@ -41,7 +43,7 @@ export default function Header() {
           <SheetContent side="left">
             <Link to="/" className="mr-6 flex items-center space-x-2">
               <img
-                src="/Logo_SC_2025_DVPF.svg"
+                src={logoSrc}
                 alt="Logo Semana da Computação"
                 className="h-6"
               />

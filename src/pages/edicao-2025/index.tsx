@@ -26,16 +26,42 @@ export default function Edicao2025Page() {
           "Painel: Carreira em Tech",
         ],
       },
-      // Outros dias serão adicionados
+      {
+        day: "Quarta-feira",
+        theme: "Dados e Inteligência Artificial",
+        highlights: [
+          "Talk: IA Generativa aplicada a produtos",
+          "Workshop: Engenharia de Prompts",
+          "Mesa-redonda: Ética e privacidade",
+        ],
+      },
+      {
+        day: "Quinta-feira",
+        theme: "Design, Produto e UX",
+        highlights: [
+          "Palestra: Produto guiado por métricas",
+          "Workshop: Prototipação rápida",
+          "Painel: Carreiras multidisciplinares",
+        ],
+      },
+      {
+        day: "Sexta-feira",
+        theme: "Mercado e Futuro da Computação",
+        highlights: [
+          "Keynote de encerramento",
+          "Sessão de networking com empresas",
+          "Desafio final e premiações",
+        ],
+      },
     ],
   };
 
   return (
-    <>
+    <main className="relative">
       <Hero2025 />
       <Info date={eventDetails.date} location={eventDetails.location} />
       <Schedule schedule={eventDetails.schedule} />
       <Subscribe />
-    </>
+    </main>
   );
 }

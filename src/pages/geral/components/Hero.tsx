@@ -2,11 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
+  const logoSrc = `${import.meta.env.BASE_URL}Logo_SC_2025_DVPF.svg`;
+
   return (
     <main className="flex flex-col items-center justify-center mx-auto min-h-[90svh] p-4">
       <div className="max-w-xl text-center mb-16">
         <img
-          src="/Logo_SC_2025_DVPF.svg"
+          src={logoSrc}
           alt="Logo Semana da Computação"
           className="max-w-xs mx-auto mb-8"
         />
@@ -20,7 +22,7 @@ export default function Hero() {
         </p>
         <div className="flex gap-4 justify-center">
           <Button asChild>
-            <Link to="/edicao-2025">Edição 2025</Link>
+            <Link to="/2025">Edição 2025</Link>
           </Button>
           <Button variant="outline">
             <Link to="/fotos">Galeria de Fotos</Link>

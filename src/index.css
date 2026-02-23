@@ -118,3 +118,49 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .event-card {
+    @apply rounded-2xl border border-border/70 bg-card/80 p-5 md:p-6 shadow-lg backdrop-blur-sm;
+  }
+
+  .reveal-base {
+    transition-property: opacity, transform, filter;
+    transition-duration: 620ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+  }
+
+  .reveal-hidden {
+    opacity: 0;
+    filter: blur(7px);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .reveal-up.reveal-hidden {
+    transform: translate3d(0, 38px, 0) scale(0.985);
+  }
+
+  .reveal-down.reveal-hidden {
+    transform: translate3d(0, -38px, 0) scale(0.985);
+  }
+
+  .reveal-left.reveal-hidden {
+    transform: translate3d(42px, 0, 0) scale(0.985);
+  }
+
+  .reveal-right.reveal-hidden {
+    transform: translate3d(-42px, 0, 0) scale(0.985);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-base {
+    transition-duration: 0.01ms;
+  }
+}

@@ -11,13 +11,15 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+  const logoSrc = `${import.meta.env.BASE_URL}Logo_SC_2025_DVPF.svg`;
+
   return (
     <footer className="bg-muted text-muted-foreground py-12">
       <div className="container grid grid-cols-1 gap-8 md:grid-cols-3 mx-auto">
         <div className="flex flex-col gap-4">
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src="/Logo_SC_2025_DVPF.svg"
+              src={logoSrc}
               alt="Logo Semana da Computação"
               className="h-8"
             />
@@ -50,7 +52,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Navegação</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/edicao-2025" className="text-sm hover:underline">
+                <Link to="/2025" className="text-sm hover:underline">
                   Edição 2025
                 </Link>
               </li>
