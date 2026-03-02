@@ -1,7 +1,12 @@
-import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import {
   Card,
   CardContent,
@@ -23,68 +28,61 @@ function resolveImage(path: string) {
 }
 
 export default function EditionsCarousel({ items }: EditionsCarouselProps) {
-  const [index, setIndex] = useState(0);
-  const total = items.length;
-
-  const current = useMemo(() => {
-    if (total === 0) return null;
-    return items[((index % total) + total) % total];
-  }, [index, items, total]);
-
-  if (!current) return null;
+  if (items.length === 0) return null;
 
   return (
-    <section id="edicoes" className="py-14 md:py-16">
+    <section id="edicoes" className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Edições em destaque</h2>
-          <p className="mt-3 text-muted-foreground">
+          <p className="mt-4 text-muted-foreground">
             Navegue pelas edições e acesse a página completa de cada ano.
           </p>
         </ScrollReveal>
 
-        <ScrollReveal className="mt-8" delay={120}>
-          <Card className="overflow-hidden border-border/70 bg-card/80 shadow-xl">
-            <div className="grid md:grid-cols-2">
-              <div className="relative min-h-56 md:min-h-full">
-                <img
-                  src={resolveImage(current.imageUrl)}
-                  alt={`Capa da ${current.name}`}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-2xl md:text-3xl">{current.name}</CardTitle>
-                  <CardDescription className="text-base">{current.tagline}</CardDescription>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  Slide {((index % total) + total) % total + 1} de {total}
-                </CardContent>
-                <CardFooter className="mt-auto flex flex-wrap gap-2">
-                  <Button asChild>
-                    <Link to={current.path}>Abrir edição</Link>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    aria-label="Slide anterior"
-                    onClick={() => setIndex((value) => value - 1)}
-                  >
-                    <ChevronLeft />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    aria-label="Próximo slide"
-                    onClick={() => setIndex((value) => value + 1)}
-                  >
-                    <ChevronRight />
-                  </Button>
-                </CardFooter>
-              </div>
-            </div>
-          </Card>
+        <ScrollReveal className="mt-10 md:mt-12" delay={120}>
+          <Carousel
+            opts={{ align: "start", loop: true }}
+            className="mx-auto w-full max-w-5xl px-3 sm:px-12 lg:px-14"
+          >
+            <CarouselContent>
+              {items.map((edition) => (
+                <CarouselItem key={edition.path}>
+                  <Card className="overflow-hidden border-border/70 bg-card/80 shadow-xl">
+                    <div className="grid md:grid-cols-2">
+                      <div className="relative flex min-h-56 items-center justify-center md:min-h-full">
+                        <div className="flex aspect-[16/10] w-full items-center justify-center px-3 py-3 md:px-5 md:py-5">
+                        <img
+                          src={resolveImage(edition.imageUrl)}
+                          alt={`Capa da ${edition.name}`}
+                          className="h-full w-full object-contain"
+                        />
+                        </div>
+                      </div>
+                      <div className="flex flex-col">
+                        <CardHeader className="pb-2 md:pb-3">
+                          <CardTitle className="text-2xl md:text-3xl">{edition.name}</CardTitle>
+                          <CardDescription className="pt-1 text-base leading-relaxed">
+                            {edition.tagline}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="pt-2 text-sm leading-relaxed text-muted-foreground">
+                          Explore o conteúdo completo desta edição.
+                        </CardContent>
+                        <CardFooter className="mt-auto pt-5">
+                          <Button asChild>
+                            <Link to={edition.path}>Abrir edição</Link>
+                          </Button>
+                        </CardFooter>
+                      </div>
+                    </div>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-1 sm:left-1 lg:-left-3" />
+            <CarouselNext className="-right-1 sm:right-1 lg:-right-3" />
+          </Carousel>
         </ScrollReveal>
       </div>
     </section>

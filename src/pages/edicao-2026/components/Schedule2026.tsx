@@ -170,7 +170,7 @@ export default function Schedule2026({ data }: Schedule2026Props) {
 
         {selectedDay ? (
           <div className="mt-10 space-y-6">
-            <ScrollReveal className="rounded-2xl border border-stone-600/40 bg-black/35 px-5 py-4 text-center">
+            <ScrollReveal className="px-5 py-4 text-center">
               <h3 className="text-xl font-bold">
                 {selectedDay.label} - {selectedDay.dateLabel}
               </h3>
@@ -202,115 +202,115 @@ export default function Schedule2026({ data }: Schedule2026Props) {
                 );
 
                 return (
-                <ScrollReveal
-                  key={`${selectedDay.id}-${track.name}`}
-                  className="rounded-2xl border border-stone-600/40 bg-black/45 p-5"
-                  delay={trackIndex * 80}
-                >
-                  <h4 className="text-lg font-semibold text-emerald-300">{track.name}</h4>
-                  <div className="mt-4 space-y-4">
-                    {(["manha", "tarde", "noite"] as TimeSlot[]).map((slot) => {
-                      const sessionsBySlot = grouped[slot];
-                      if (!sessionsBySlot.length) {
-                        return null;
-                      }
+                  <ScrollReveal
+                    key={`${selectedDay.id}-${track.name}`}
+                    className="rounded-2xl border border-stone-600/40 bg-black/45 p-5"
+                    delay={trackIndex * 80}
+                  >
+                    <h4 className="text-lg font-semibold text-emerald-300">{track.name}</h4>
+                    <div className="mt-4 space-y-4">
+                      {(["manha", "tarde", "noite"] as TimeSlot[]).map((slot) => {
+                        const sessionsBySlot = grouped[slot];
+                        if (!sessionsBySlot.length) {
+                          return null;
+                        }
 
-                      return (
-                        <div key={`${track.name}-${slot}`} className="space-y-3">
-                          <p className="text-[11px] uppercase tracking-[0.16em] text-stone-400">
-                            {slotLabel(slot)}
-                          </p>
-                          {sessionsBySlot.map((session, sessionIndex) => (
-                      <article
-                        key={`${track.name}-${session.title}-${sessionIndex}`}
-                        className="relative rounded-xl border border-stone-700/60 bg-zinc-900/70 p-3"
-                      >
-                        {session.trail ? (
-                          <div className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-stone-600/70 bg-black/55 px-2 py-1">
-                            {(() => {
-                              const TrailIcon = getTrailIcon(session.trail?.key);
-                              return <TrailIcon className="h-3.5 w-3.5 text-emerald-300" />;
-                            })()}
-                            <span className="text-[10px] uppercase tracking-[0.12em] text-stone-200">
-                              {session.trail.label}
-                            </span>
-                          </div>
-                        ) : null}
-                        <p className="text-xs uppercase tracking-[0.14em] text-amber-300">
-                          {session.time} - {session.endTime} • {session.type}
-                        </p>
-                        <h5 className="mt-2 font-semibold">{session.title}</h5>
-                        <p className="mt-1 text-sm text-stone-300">{session.speaker}</p>
-                        <p className="mt-2 text-sm text-stone-200">{session.description}</p>
-
-                        {session.presenters && session.presenters.length > 0 ? (
-                          <div className="mt-4 space-y-3 border-t border-stone-700/50 pt-3">
-                            <p className="text-xs uppercase tracking-[0.14em] text-emerald-300">
-                              Palestrantes
+                        return (
+                          <div key={`${track.name}-${slot}`} className="space-y-3">
+                            <p className="text-[11px] uppercase tracking-[0.16em] text-stone-400">
+                              {slotLabel(slot)}
                             </p>
-                            {session.presenters.map((presenter, presenterIndex) => {
-                              const socialLinks = getSocialLinks(presenter.socials);
-
-                              return (
-                                <div
-                                  key={`${presenter.name}-${presenterIndex}`}
-                                  className="rounded-lg border border-stone-700/60 bg-black/35 p-3"
-                                >
-                                  <div className="flex items-start gap-3">
-                                    {presenter.photoUrl ? (
-                                      <img
-                                        src={presenter.photoUrl}
-                                        alt={`Foto de ${presenter.name}`}
-                                        className="h-14 w-14 rounded-md object-cover"
-                                      />
-                                    ) : (
-                                      <div className="flex h-14 w-14 items-center justify-center rounded-md bg-stone-700 text-sm font-semibold">
-                                        {presenter.name
-                                          .split(" ")
-                                          .slice(0, 2)
-                                          .map((part) => part[0]?.toUpperCase())
-                                          .join("")}
-                                      </div>
-                                    )}
-                                    <div className="min-w-0">
-                                      <p className="font-medium leading-tight">{presenter.name}</p>
-                                      {presenter.role ? (
-                                        <p className="mt-1 text-xs text-stone-300">{presenter.role}</p>
-                                      ) : null}
-                                    </div>
+                            {sessionsBySlot.map((session, sessionIndex) => (
+                              <article
+                                key={`${track.name}-${session.title}-${sessionIndex}`}
+                                className="relative rounded-xl border border-stone-700/60 bg-zinc-900/70 p-3"
+                              >
+                                {session.trail ? (
+                                  <div className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-stone-600/70 bg-black/55 px-2 py-1">
+                                    {(() => {
+                                      const TrailIcon = getTrailIcon(session.trail?.key);
+                                      return <TrailIcon className="h-3.5 w-3.5 text-emerald-300" />;
+                                    })()}
+                                    <span className="text-[10px] uppercase tracking-[0.12em] text-stone-200">
+                                      {session.trail.label}
+                                    </span>
                                   </div>
+                                ) : null}
+                                <p className="text-xs uppercase tracking-[0.14em] text-amber-300">
+                                  {session.time} - {session.endTime} • {session.type}
+                                </p>
+                                <h5 className="mt-2 font-semibold">{session.title}</h5>
+                                <p className="mt-1 text-sm text-stone-300">{session.speaker}</p>
+                                <p className="mt-2 text-sm text-stone-200">{session.description}</p>
 
-                                  {socialLinks.length > 0 ? (
-                                    <div className="mt-3 flex flex-wrap gap-2">
-                                      {socialLinks.map((link) => (
-                                        <a
-                                          key={`${presenter.name}-${link.label}`}
-                                          href={link.href}
-                                          target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                                          rel={
-                                            link.href.startsWith("mailto:")
-                                              ? undefined
-                                              : "noopener noreferrer"
-                                          }
-                                          className="rounded-full border border-stone-600/60 px-2 py-1 text-[11px] text-stone-200 hover:bg-stone-800"
+                                {session.presenters && session.presenters.length > 0 ? (
+                                  <div className="mt-4 space-y-3 border-t border-stone-700/50 pt-3">
+                                    <p className="text-xs uppercase tracking-[0.14em] text-emerald-300">
+                                      Palestrantes
+                                    </p>
+                                    {session.presenters.map((presenter, presenterIndex) => {
+                                      const socialLinks = getSocialLinks(presenter.socials);
+
+                                      return (
+                                        <div
+                                          key={`${presenter.name}-${presenterIndex}`}
+                                          className="rounded-lg border border-stone-700/60 bg-black/35 p-3"
                                         >
-                                          {link.label}
-                                        </a>
-                                      ))}
-                                    </div>
-                                  ) : null}
-                                </div>
-                              );
-                            })}
+                                          <div className="flex items-start gap-3">
+                                            {presenter.photoUrl ? (
+                                              <img
+                                                src={presenter.photoUrl}
+                                                alt={`Foto de ${presenter.name}`}
+                                                className="h-14 w-14 rounded-md object-cover"
+                                              />
+                                            ) : (
+                                              <div className="flex h-14 w-14 items-center justify-center rounded-md bg-stone-700 text-sm font-semibold">
+                                                {presenter.name
+                                                  .split(" ")
+                                                  .slice(0, 2)
+                                                  .map((part) => part[0]?.toUpperCase())
+                                                  .join("")}
+                                              </div>
+                                            )}
+                                            <div className="min-w-0">
+                                              <p className="font-medium leading-tight">{presenter.name}</p>
+                                              {presenter.role ? (
+                                                <p className="mt-1 text-xs text-stone-300">{presenter.role}</p>
+                                              ) : null}
+                                            </div>
+                                          </div>
+
+                                          {socialLinks.length > 0 ? (
+                                            <div className="mt-3 flex flex-wrap gap-2">
+                                              {socialLinks.map((link) => (
+                                                <a
+                                                  key={`${presenter.name}-${link.label}`}
+                                                  href={link.href}
+                                                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                                                  rel={
+                                                    link.href.startsWith("mailto:")
+                                                      ? undefined
+                                                      : "noopener noreferrer"
+                                                  }
+                                                  className="rounded-full border border-stone-600/60 px-2 py-1 text-[11px] text-stone-200 hover:bg-stone-800"
+                                                >
+                                                  {link.label}
+                                                </a>
+                                              ))}
+                                            </div>
+                                          ) : null}
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                ) : null}
+                              </article>
+                            ))}
                           </div>
-                        ) : null}
-                      </article>
-                          ))}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </ScrollReveal>
+                        );
+                      })}
+                    </div>
+                  </ScrollReveal>
                 );
               })}
             </div>

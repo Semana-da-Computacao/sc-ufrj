@@ -1,6 +1,6 @@
 {
   "hero": {
-    "badge": "Destaque 2026 • The Last of Us - Temporada 2",
+    "badge": "Destaque 2026 • The Last of Us",
     "title": "Semana da Computação UFRJ",
     "subtitle": "Conteúdo técnico, trilhas temáticas e conexões reais entre universidade e mercado para acelerar sua formação em tecnologia.",
     "primaryCtaLabel": "Inscrição 2026 no Even3",
@@ -9,10 +9,22 @@
     "secondaryCtaUrl": "/2026"
   },
   "stats": [
-    { "number": "15+", "label": "Edições realizadas" },
-    { "number": "1000+", "label": "Participantes por edição" },
-    { "number": "50+", "label": "Palestras e workshops" },
-    { "number": "30+", "label": "Empresas e instituições parceiras" }
+    {
+      "number": "15+",
+      "label": "Edições realizadas"
+    },
+    {
+      "number": "1000+",
+      "label": "Participantes por edição"
+    },
+    {
+      "number": "50+",
+      "label": "Palestras e workshops"
+    },
+    {
+      "number": "30+",
+      "label": "Empresas e instituições parceiras"
+    }
   ],
   "about": {
     "title": "Uma semana para ampliar sua formação",
