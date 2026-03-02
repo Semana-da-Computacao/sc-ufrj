@@ -8,12 +8,7 @@
     "badge": "13 a 17 de abril de 2026 • CCMN/UFRJ",
     "title": "Semana da Computação UFRJ 2026",
     "subtitle": "When You Are Lost in the Darkness",
-    "description": "Uma edição pensada para conectar formação acadêmica, mercado e protagonismo estudantil com trilhas práticas e palestras estratégicas.",
-    "highlights": [
-      "Trilhas simultâneas em Auditório + Salas",
-      "Palestras com mercado e pesquisa",
-      "Workshops práticos com mentoria"
-    ]
+    "description": "Uma edição pensada para conectar formação acadêmica, mercado e protagonismo estudantil com trilhas práticas e palestras estratégicas."
   },
   "eventInfo": {
     "dateRangeLabel": "13 a 17 de abril de 2026",
@@ -36,7 +31,7 @@
     "formUrl": "https://forms.gle/WQqS2bn8137Xvnz47"
   },
   "assets": {
-    "heroFallbackGif": "https://images.steamusercontent.com/ugc/1690520848830870076/6D7F87B6843ED09744C2F1A0182AC499C6972699/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+    "heroFallbackGif": "2026/bg-hero.gif",
     "heroRightImage": "2026/hero-right.png",
     "zombieLeft": "2026/zombie-left.png",
     "zombieRight": "2026/zombie-right.png"
