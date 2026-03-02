@@ -26,7 +26,8 @@ export default function Header() {
             <Link to="/2025">Edição 2025</Link>
             <Link to="/2019">Edição 2019</Link>
             <Link to="/#sobre">Sobre</Link>
-            <Link to="/#parceiros">Parceiros</Link>
+            <Link to="/#comissao">Comissão</Link>
+            <Link to="/#faq">FAQ</Link>
             <Link to="/fotos">Galeria</Link>
           </nav>
         </div>
@@ -64,8 +65,11 @@ export default function Header() {
               <Link to="/#sobre" className="text-sm font-medium">
                 Sobre
               </Link>
-              <Link to="/#parceiros" className="text-sm font-medium">
-                Parceiros
+              <Link to="/#comissao" className="text-sm font-medium">
+                Comissão
+              </Link>
+              <Link to="/#faq" className="text-sm font-medium">
+                FAQ
               </Link>
               <Link to="/fotos" className="text-sm font-medium">
                 Galeria

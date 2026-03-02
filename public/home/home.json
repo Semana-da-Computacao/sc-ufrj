@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "badge": "Destaque 2026 • The Last of Us - Temporada 2",
+    "title": "Semana da Computação UFRJ",
+    "subtitle": "Conteúdo técnico, trilhas temáticas e conexões reais entre universidade e mercado para acelerar sua formação em tecnologia.",
+    "primaryCtaLabel": "Inscrição 2026 no Even3",
+    "primaryCtaUrl": "https://www.even3.com.br/ix-semana-da-computacao-ufrj-2026/",
+    "secondaryCtaLabel": "Ver edição 2026",
+    "secondaryCtaUrl": "/2026"
+  },
+  "stats": [
+    { "number": "15+", "label": "Edições realizadas" },
+    { "number": "1000+", "label": "Participantes por edição" },
+    { "number": "50+", "label": "Palestras e workshops" },
+    { "number": "30+", "label": "Empresas e instituições parceiras" }
+  ],
+  "about": {
+    "title": "Uma semana para ampliar sua formação",
+    "subtitle": "Experiência prática para estudantes de computação e áreas correlatas.",
+    "paragraphs": [
+      "A Semana da Computação da UFRJ conecta estudantes, professores, pesquisadores e profissionais em uma programação com palestras, oficinas e painéis de carreira.",
+      "Nosso objetivo é aproximar universidade e mercado, fortalecer a comunidade e criar oportunidades concretas de aprendizado, networking e desenvolvimento profissional."
+    ]
+  },
+  "featuredEditions": [
+    {
+      "name": "Edição 2026",
+      "path": "/2026",
+      "tagline": "The Last of Us - Temporada 2 com narrativa imersiva, trilhas e programação dinâmica.",
+      "imageUrl": "2026/hero-right.png"
+    },
+    {
+      "name": "Edição 2025",
+      "path": "/2025",
+      "tagline": "Back to the Future com foco em tendências de engenharia, IA e carreira.",
+      "imageUrl": "2025/bg-hero.gif"
+    },
+    {
+      "name": "Edição 2019",
+      "path": "/2019",
+      "tagline": "Edição histórica com legado de conteúdo e fortalecimento da comunidade.",
+      "imageUrl": "Logo_SC_2025_DVPF.svg"
+    }
+  ],
+  "committee": {
+    "title": "Comissão organizadora",
+    "subtitle": "Equipe responsável por curadoria, produção e execução da Semana da Computação UFRJ.",
+    "members": [
+      {
+        "name": "Ana Beatriz Costa",
+        "role": "Coordenação Geral",
+        "photoUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
+        "linkedin": "https://www.linkedin.com/",
+        "lattes": "http://lattes.cnpq.br/0000000000000001",
+        "github": "https://github.com/",
+        "instagram": "https://www.instagram.com/",
+        "site": "https://example.com",
+        "email": "anab.costa@ufrj.br"
+      },
+      {
+        "name": "Lucas Almeida",
+        "role": "Coordenação de Conteúdo",
+        "photoUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+        "linkedin": "https://www.linkedin.com/",
+        "lattes": "http://lattes.cnpq.br/0000000000000002",
+        "github": "https://github.com/",
+        "instagram": "https://www.instagram.com/",
+        "site": "https://example.org",
+        "email": "lucas.almeida@ufrj.br"
+      },
+      {
+        "name": "Marina Nascimento",
+        "role": "Coordenação de Parcerias",
+        "photoUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80",
+        "linkedin": "https://www.linkedin.com/",
+        "lattes": "http://lattes.cnpq.br/0000000000000003",
+        "github": "https://github.com/",
+        "instagram": "https://www.instagram.com/",
+        "site": "https://example.net",
+        "email": "marina.nascimento@ufrj.br"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "subtitle": "Informações rápidas para quem vai participar.",
+    "items": [
+      {
+        "question": "A Semana da Computação é gratuita?",
+        "answer": "A inscrição pode variar por edição. Consulte sempre a página oficial da edição ativa e a plataforma Even3 para regras e lotes."
+      },
+      {
+        "question": "Como funciona o certificado?",
+        "answer": "Os certificados são emitidos conforme as regras de presença e participação definidas na edição. Os detalhes ficam na página da edição e no sistema de inscrição."
+      },
+      {
+        "question": "Posso participar de trilhas em salas diferentes no mesmo dia?",
+        "answer": "Sim. A programação é organizada por horário e sala, então você pode montar sua própria trilha conforme disponibilidade de vagas e conflito de horários."
+      },
+      {
+        "question": "Como empresas podem apoiar o evento?",
+        "answer": "Entre em contato com a comissão organizadora para receber a proposta de parceria e formatos de participação."
+      }
+    ]
+  },
+  "seo": {
+    "title": "Semana da Computação UFRJ | Evento Acadêmico de Tecnologia",
+    "description": "Site oficial da Semana da Computação UFRJ com edições, programação, comissão organizadora, FAQs e inscrições.",
+    "keywords": "Semana da Computação UFRJ, evento de computação, tecnologia, palestras, workshops, Even3",
+    "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/",
+    "ogImage": "Logo_SC_2025_DVPF.svg",
+    "twitterImage": "Logo_SC_2025_DVPF.svg",
+    "twitterCard": "summary_large_image",
+    "siteName": "Semana da Computação UFRJ",
+    "ogType": "website"
+  }
+}

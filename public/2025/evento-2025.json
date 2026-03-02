@@ -1,0 +1,338 @@
+{
+  "eventInfo": {
+    "date": "31 de Março a 04 de Abril de 2025",
+    "location": "CCMN - UFRJ, Ilha do Fundão",
+    "about": "A edição 2025 da Semana da Computação reuniu estudantes, professores e profissionais em uma semana de conteúdo técnico, carreira e networking, com trilhas paralelas no auditório e em salas temáticas."
+  },
+  "seo": {
+    "title": "Edição 2025 | Semana da Computação UFRJ",
+    "description": "Página oficial da edição 2025 da Semana da Computação UFRJ com informações gerais, programação e patrocinadores.",
+    "keywords": "Semana da Computação UFRJ 2025, programação 2025, palestras, workshops, computação",
+    "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/2025",
+    "ogImage": "Logo_SC_2025_DVPF.svg",
+    "twitterImage": "Logo_SC_2025_DVPF.svg",
+    "twitterCard": "summary_large_image",
+    "siteName": "Semana da Computação UFRJ",
+    "ogType": "website"
+  },
+  "sponsors": {
+    "title": "Patrocinadores e Parceiros",
+    "subtitle": "Empresas e instituições que impulsionaram a edição de 2025.",
+    "tiers": [
+      {
+        "type": 1,
+        "brands": [
+          {
+            "name": "NVIDIA",
+            "logoUrl": "2026/sponsors/nvidia-mock.png",
+            "website": "https://www.nvidia.com"
+          },
+          {
+            "name": "Google Cloud",
+            "logoUrl": "2026/sponsors/google-cloud-mock.png",
+            "website": "https://cloud.google.com"
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "brands": [
+          {
+            "name": "Rocketseat",
+            "logoUrl": "2026/sponsors/rocketseat-mock.png",
+            "website": "https://www.rocketseat.com.br"
+          },
+          {
+            "name": "Alura",
+            "logoUrl": "2026/sponsors/alura-mock.png",
+            "website": "https://www.alura.com.br"
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "brands": [
+          {
+            "name": "Vercel",
+            "logoUrl": "2026/sponsors/vercel-mock.png",
+            "website": "https://vercel.com"
+          },
+          {
+            "name": "MongoDB",
+            "logoUrl": "2026/sponsors/mongodb-mock.png",
+            "website": "https://www.mongodb.com"
+          }
+        ]
+      }
+    ],
+    "partners": [
+      {
+        "name": "UFRJ",
+        "logoUrl": "2026/sponsors/ufrj-mock.png",
+        "website": "https://ufrj.br"
+      },
+      {
+        "name": "CCMN",
+        "logoUrl": "2026/sponsors/ccmn-mock.png",
+        "website": "https://ccmn.ufrj.br"
+      },
+      {
+        "name": "SBC",
+        "logoUrl": "2026/sponsors/sbc-mock.png",
+        "website": "https://www.sbc.org.br"
+      }
+    ]
+  },
+  "schedule": [
+    {
+      "id": "2025-03-31",
+      "day": "Segunda-feira",
+      "dateLabel": "31/03/2025",
+      "theme": "Abertura e Tendências",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "10:00",
+              "title": "Abertura Oficial",
+              "type": "Abertura",
+              "speaker": "Comissão SC UFRJ",
+              "description": "Boas-vindas e visão geral da semana."
+            },
+            {
+              "time": "10:30",
+              "endTime": "12:00",
+              "title": "Panorama Tech 2025",
+              "type": "Palestra",
+              "speaker": "Convidado do mercado",
+              "description": "Tendências em engenharia de software, IA e produto."
+            },
+            {
+              "time": "14:00",
+              "endTime": "15:30",
+              "title": "Painel: Universidade + Mercado",
+              "type": "Painel",
+              "speaker": "Professores e alumni",
+              "description": "Como acelerar a transição para o mercado."
+            }
+          ]
+        },
+        {
+          "name": "Sala B101",
+          "sessions": [
+            {
+              "time": "10:30",
+              "endTime": "12:00",
+              "title": "Git e Fluxos de Trabalho",
+              "type": "Workshop",
+              "speaker": "Mentoria SC",
+              "description": "Branching, PR, review e integração contínua."
+            },
+            {
+              "time": "14:00",
+              "endTime": "16:00",
+              "title": "APIs com Node e TypeScript",
+              "type": "Workshop",
+              "speaker": "Equipe parceira",
+              "description": "Construção de API REST com boas práticas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2025-04-01",
+      "day": "Terça-feira",
+      "dateLabel": "01/04/2025",
+      "theme": "Engenharia de Software",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "10:30",
+              "title": "Arquitetura de Sistemas Escaláveis",
+              "type": "Palestra",
+              "speaker": "Engenheiro(a) sênior",
+              "description": "Trade-offs, observabilidade e resiliência."
+            },
+            {
+              "time": "11:00",
+              "endTime": "12:00",
+              "title": "Talks de Alumni",
+              "type": "Talk",
+              "speaker": "Ex-alunos UFRJ",
+              "description": "Lições práticas de carreira em tecnologia."
+            }
+          ]
+        },
+        {
+          "name": "Sala B102",
+          "sessions": [
+            {
+              "time": "10:00",
+              "endTime": "12:00",
+              "title": "Teste Automatizado na Prática",
+              "type": "Oficina",
+              "speaker": "Mentores convidados",
+              "description": "Estratégias para testes unitários e integração."
+            },
+            {
+              "time": "14:00",
+              "endTime": "16:00",
+              "title": "DevOps para Times de Produto",
+              "type": "Workshop",
+              "speaker": "Especialista DevOps",
+              "description": "CI/CD, deploy seguro e monitoramento."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2025-04-02",
+      "day": "Quarta-feira",
+      "dateLabel": "02/04/2025",
+      "theme": "Dados e Inteligência Artificial",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "10:30",
+              "title": "IA aplicada a Produto Digital",
+              "type": "Palestra",
+              "speaker": "Especialista em IA",
+              "description": "Casos reais, métricas e impacto no negócio."
+            },
+            {
+              "time": "14:00",
+              "endTime": "15:30",
+              "title": "Mesa-redonda: Ética e IA",
+              "type": "Mesa-redonda",
+              "speaker": "Docentes e mercado",
+              "description": "Debate sobre responsabilidade e governança."
+            }
+          ]
+        },
+        {
+          "name": "Laboratório C302",
+          "sessions": [
+            {
+              "time": "10:30",
+              "endTime": "12:00",
+              "title": "SQL para Análise de Dados",
+              "type": "Oficina",
+              "speaker": "Equipe de dados",
+              "description": "Queries e leitura de indicadores de produto."
+            },
+            {
+              "time": "14:00",
+              "endTime": "16:00",
+              "title": "Pipeline de ML em Produção",
+              "type": "Minicurso",
+              "speaker": "Pesquisador(a) convidado(a)",
+              "description": "Versionamento, monitoramento e deploy de modelos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2025-04-03",
+      "day": "Quinta-feira",
+      "dateLabel": "03/04/2025",
+      "theme": "Design, Produto e UX",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:30",
+              "endTime": "11:00",
+              "title": "Construindo Produtos Relevantes",
+              "type": "Palestra",
+              "speaker": "Head de Produto",
+              "description": "Descoberta, priorização e validação contínua."
+            },
+            {
+              "time": "14:30",
+              "endTime": "16:00",
+              "title": "Carreira em Produto e UX",
+              "type": "Painel",
+              "speaker": "Lideranças convidadas",
+              "description": "Percursos, competências e mercado."
+            }
+          ]
+        },
+        {
+          "name": "Sala B201",
+          "sessions": [
+            {
+              "time": "10:00",
+              "endTime": "12:00",
+              "title": "Frontend Moderno com React",
+              "type": "Workshop",
+              "speaker": "Engenheiro(a) Frontend",
+              "description": "Componentização e integração com APIs."
+            },
+            {
+              "time": "14:00",
+              "endTime": "16:00",
+              "title": "Design System no Dia a Dia",
+              "type": "Oficina",
+              "speaker": "Product Designer",
+              "description": "Escala visual e consistência entre times."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2025-04-04",
+      "day": "Sexta-feira",
+      "dateLabel": "04/04/2025",
+      "theme": "Mercado e Futuro",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "10:30",
+              "title": "Futuro da Engenharia de Software",
+              "type": "Palestra",
+              "speaker": "Liderança de engenharia",
+              "description": "Como IA e automação mudam o dia a dia de devs."
+            },
+            {
+              "time": "11:00",
+              "endTime": "12:30",
+              "title": "Encerramento e Premiações",
+              "type": "Encerramento",
+              "speaker": "Comissão SC UFRJ",
+              "description": "Fechamento da edição e próximos passos."
+            }
+          ]
+        },
+        {
+          "name": "Sala B101",
+          "sessions": [
+            {
+              "time": "09:30",
+              "endTime": "11:30",
+              "title": "Mentoria de Portfólio",
+              "type": "Mentoria",
+              "speaker": "Mentores convidados",
+              "description": "Revisão de currículo e projetos para vagas."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

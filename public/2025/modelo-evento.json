@@ -1,0 +1,82 @@
+{
+  "eventInfo": {
+    "date": "31 de Março a 04 de Abril de 2025",
+    "location": "CCMN - UFRJ, Ilha do Fundão",
+    "about": "Resumo da proposta da edição"
+  },
+  "seo": {
+    "title": "Título SEO da edição 2025",
+    "description": "Descrição SEO da edição 2025",
+    "keywords": "palavras-chave separadas por vírgula",
+    "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/2025",
+    "ogImage": "Logo_SC_2025_DVPF.svg",
+    "twitterImage": "Logo_SC_2025_DVPF.svg",
+    "twitterCard": "summary_large_image",
+    "siteName": "Semana da Computação UFRJ",
+    "ogType": "website"
+  },
+  "sponsors": {
+    "title": "Patrocinadores e Parceiros",
+    "subtitle": "Marcas que apoiaram a edição 2025.",
+    "tiers": [
+      {
+        "type": 1,
+        "brands": [
+          {
+            "name": "Nome da marca principal",
+            "logoUrl": "2026/sponsors/nvidia-mock.png",
+            "website": "https://exemplo.com"
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "brands": [
+          {
+            "name": "Nome da marca de destaque",
+            "logoUrl": "2026/sponsors/google-cloud-mock.png"
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "brands": [
+          {
+            "name": "Nome da marca de apoio",
+            "logoUrl": "2026/sponsors/vercel-mock.png"
+          }
+        ]
+      }
+    ],
+    "partners": [
+      {
+        "name": "Nome da instituição parceira",
+        "logoUrl": "2026/sponsors/ufrj-mock.png",
+        "website": "https://exemplo.org"
+      }
+    ]
+  },
+  "schedule": [
+    {
+      "id": "2025-03-31",
+      "day": "Segunda-feira",
+      "dateLabel": "31/03/2025",
+      "theme": "Tema do dia",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "10:30",
+              "title": "Título da sessão",
+              "type": "Palestra",
+              "speaker": "Pessoa convidada",
+              "description": "Descrição curta"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

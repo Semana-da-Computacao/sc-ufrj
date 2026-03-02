@@ -1,0 +1,13 @@
+{
+  "seo": {
+    "title": "Edição 2019 (Histórica) | Semana da Computação UFRJ",
+    "description": "Página histórica da edição 2019 da Semana da Computação UFRJ com números, trilhas e dados da edição.",
+    "keywords": "Semana da Computação UFRJ 2019, edição histórica, tecnologia, universidade",
+    "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/2019",
+    "ogImage": "Logo_SC_2025_DVPF.svg",
+    "twitterImage": "Logo_SC_2025_DVPF.svg",
+    "twitterCard": "summary_large_image",
+    "siteName": "Semana da Computação UFRJ",
+    "ogType": "website"
+  }
+}

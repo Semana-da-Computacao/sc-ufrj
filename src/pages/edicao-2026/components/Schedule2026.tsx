@@ -19,6 +19,8 @@ interface Schedule2026Props {
   data: EventEditionData;
 }
 
+type TimeSlot = "manha" | "tarde" | "noite";
+
 function getSocialLinks(socials?: {
   lattes?: string;
   linkedin?: string;
@@ -61,6 +63,28 @@ function getTrailIcon(key?: string): LucideIcon {
   return iconByTrail[key ?? ""] ?? Code2;
 }
 
+function timeToMinutes(value: string) {
+  const [h, m] = value.split(":").map(Number);
+  return h * 60 + m;
+}
+
+function getTimeSlot(value: string): TimeSlot {
+  const minutes = timeToMinutes(value);
+  if (minutes < 12 * 60) {
+    return "manha";
+  }
+  if (minutes < 18 * 60) {
+    return "tarde";
+  }
+  return "noite";
+}
+
+function slotLabel(slot: TimeSlot) {
+  if (slot === "manha") return "Manhã";
+  if (slot === "tarde") return "Tarde";
+  return "Noite";
+}
+
 export default function Schedule2026({ data }: Schedule2026Props) {
   const firstDayId = data.days[0]?.id ?? "";
   const [selectedDayId, setSelectedDayId] = useState(firstDayId);
@@ -71,6 +95,22 @@ export default function Schedule2026({ data }: Schedule2026Props) {
     () => data.days.find((day) => day.id === selectedDayId) ?? data.days[0],
     [data.days, selectedDayId]
   );
+  const daySummary = useMemo(() => {
+    if (!selectedDay) {
+      return { sessions: 0, speakers: 0 };
+    }
+
+    const sessions = selectedDay.tracks.reduce((sum, track) => sum + track.sessions.length, 0);
+    const speakers = new Set(
+      selectedDay.tracks.flatMap((track) =>
+        track.sessions.flatMap((session) =>
+          (session.presenters ?? []).map((presenter) => presenter.name)
+        )
+      )
+    ).size;
+
+    return { sessions, speakers };
+  }, [selectedDay]);
 
   useEffect(() => {
     if (!data.days.length) {
@@ -134,21 +174,53 @@ export default function Schedule2026({ data }: Schedule2026Props) {
               <h3 className="text-xl font-bold">
                 {selectedDay.label} - {selectedDay.dateLabel}
               </h3>
-              <p className="mt-2 text-sm text-stone-300">
-                {selectedDay.tracks.length} ambiente(s) com atividades disponíveis neste dia.
-              </p>
+              <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-xs">
+                <span className="rounded-full border border-stone-600/60 bg-black/45 px-3 py-1 text-stone-200">
+                  {selectedDay.tracks.length} ambiente(s)
+                </span>
+                <span className="rounded-full border border-stone-600/60 bg-black/45 px-3 py-1 text-stone-200">
+                  {daySummary.sessions} sessão(ões)
+                </span>
+                <span className="rounded-full border border-stone-600/60 bg-black/45 px-3 py-1 text-stone-200">
+                  {daySummary.speakers} palestrante(s)
+                </span>
+              </div>
             </ScrollReveal>
 
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {selectedDay.tracks.map((track, trackIndex) => (
+              {selectedDay.tracks.map((track, trackIndex) => {
+                const sortedSessions = [...track.sessions].sort(
+                  (a, b) => timeToMinutes(a.time) - timeToMinutes(b.time)
+                );
+                const grouped = sortedSessions.reduce(
+                  (acc, session) => {
+                    const slot = getTimeSlot(session.time);
+                    acc[slot].push(session);
+                    return acc;
+                  },
+                  { manha: [], tarde: [], noite: [] } as Record<TimeSlot, typeof sortedSessions>
+                );
+
+                return (
                 <ScrollReveal
                   key={`${selectedDay.id}-${track.name}`}
                   className="rounded-2xl border border-stone-600/40 bg-black/45 p-5"
                   delay={trackIndex * 80}
                 >
                   <h4 className="text-lg font-semibold text-emerald-300">{track.name}</h4>
-                  <div className="mt-4 space-y-3">
-                    {track.sessions.map((session, sessionIndex) => (
+                  <div className="mt-4 space-y-4">
+                    {(["manha", "tarde", "noite"] as TimeSlot[]).map((slot) => {
+                      const sessionsBySlot = grouped[slot];
+                      if (!sessionsBySlot.length) {
+                        return null;
+                      }
+
+                      return (
+                        <div key={`${track.name}-${slot}`} className="space-y-3">
+                          <p className="text-[11px] uppercase tracking-[0.16em] text-stone-400">
+                            {slotLabel(slot)}
+                          </p>
+                          {sessionsBySlot.map((session, sessionIndex) => (
                       <article
                         key={`${track.name}-${session.title}-${sessionIndex}`}
                         className="relative rounded-xl border border-stone-700/60 bg-zinc-900/70 p-3"
@@ -233,10 +305,14 @@ export default function Schedule2026({ data }: Schedule2026Props) {
                           </div>
                         ) : null}
                       </article>
-                    ))}
+                          ))}
+                        </div>
+                      );
+                    })}
                   </div>
                 </ScrollReveal>
-              ))}
+                );
+              })}
             </div>
           </div>
         ) : (

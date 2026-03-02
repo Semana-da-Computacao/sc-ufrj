@@ -1,12 +1,11 @@
 import ScrollReveal from "@/components/scroll-reveal";
+import type { HomeStatData } from "../data/types";
 
-export default function Stats() {
-  const stats = [
-    { number: "15+", label: "Edições realizadas" },
-    { number: "1000+", label: "Participantes por edição" },
-    { number: "50+", label: "Palestras e workshops" },
-    { number: "30+", label: "Empresas parceiras" },
-  ];
+interface StatsProps {
+  items: HomeStatData[];
+}
+
+export default function Stats({ items }: StatsProps) {
 
   return (
     <section className="py-20 md:py-24">
@@ -19,7 +18,7 @@ export default function Stats() {
           </p>
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-10">
-          {stats.map((stat, index) => (
+          {items.map((stat, index) => (
             <ScrollReveal
               key={stat.label}
               delay={80 + index * 60}

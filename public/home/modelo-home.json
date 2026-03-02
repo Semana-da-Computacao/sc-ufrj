@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "badge": "Texto curto de destaque",
+    "title": "Título principal da home",
+    "subtitle": "Resumo objetivo da proposta da Semana da Computação.",
+    "primaryCtaLabel": "Texto do botão principal",
+    "primaryCtaUrl": "https://www.even3.com.br/...",
+    "secondaryCtaLabel": "Texto do botão secundário",
+    "secondaryCtaUrl": "/2026"
+  },
+  "stats": [
+    { "number": "15+", "label": "Edições realizadas" },
+    { "number": "1000+", "label": "Participantes por edição" }
+  ],
+  "about": {
+    "title": "Título da seção Sobre",
+    "subtitle": "Subtítulo da seção Sobre",
+    "paragraphs": [
+      "Primeiro parágrafo da seção.",
+      "Segundo parágrafo da seção."
+    ]
+  },
+  "featuredEditions": [
+    {
+      "name": "Edição 2026",
+      "path": "/2026",
+      "tagline": "Resumo da edição.",
+      "imageUrl": "2026/hero-right.png"
+    }
+  ],
+  "committee": {
+    "title": "Comissão organizadora",
+    "subtitle": "Descrição curta da comissão.",
+    "members": [
+      {
+        "name": "Nome completo",
+        "role": "Coordenação Geral",
+        "photoUrl": "https://exemplo.com/foto.jpg",
+        "linkedin": "https://www.linkedin.com/in/usuario",
+        "lattes": "http://lattes.cnpq.br/0000000000000000",
+        "github": "https://github.com/usuario",
+        "instagram": "https://www.instagram.com/usuario",
+        "site": "https://usuario.dev",
+        "email": "usuario@ufrj.br"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "subtitle": "Dúvidas mais comuns dos participantes.",
+    "items": [
+      {
+        "question": "Pergunta de exemplo?",
+        "answer": "Resposta de exemplo."
+      }
+    ]
+  },
+  "seo": {
+    "title": "Semana da Computação UFRJ | Home",
+    "description": "Descrição SEO da home.",
+    "keywords": "semana da computação, ufrj, tecnologia",
+    "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/",
+    "ogImage": "Logo_SC_2025_DVPF.svg",
+    "twitterImage": "Logo_SC_2025_DVPF.svg",
+    "twitterCard": "summary_large_image",
+    "siteName": "Semana da Computação UFRJ",
+    "ogType": "website"
+  }
+}

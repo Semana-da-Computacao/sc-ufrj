@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Link } from "react-router-dom";
+import type { HomeHeroData } from "../data/types";
 
-export default function Hero() {
+interface HeroProps {
+  data: HomeHeroData;
+}
+
+function isExternal(url: string) {
+  return /^https?:\/\//i.test(url);
+}
+
+export default function Hero({ data }: HeroProps) {
   const logoSrc = `${import.meta.env.BASE_URL}Logo_SC_2025_DVPF.svg`;
-  const even3Url = "https://www.even3.com.br/ix-semana-da-computacao-ufrj-2026/";
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -23,28 +31,38 @@ export default function Hero() {
               className="max-w-40 sm:max-w-48 mx-auto"
             />
             <h1 className="mt-6 text-3xl font-black leading-tight sm:text-5xl">
-              Semana da Computação UFRJ
+              {data.title}
             </h1>
             <p className="mt-4 inline-flex items-center rounded-full border border-emerald-700/40 bg-emerald-900/90 px-4 py-2 text-xs sm:text-sm tracking-[0.12em] text-emerald-100 uppercase">
-              Destaque 2026 • The Last of Us - Temporada 2
+              {data.badge}
             </p>
             <p className="mt-5 text-base text-foreground/90 sm:text-lg">
-              O principal evento estudantil de computação da UFRJ, conectando
-              universidade, mercado e comunidade.
+              {data.subtitle}
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg">
-                <a href={even3Url} target="_blank" rel="noopener noreferrer">
-                  Inscrição 2026 no Even3
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/2026">Edição 2026</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/2025">Edição 2025</Link>
-              </Button>
+              {isExternal(data.primaryCtaUrl) ? (
+                <Button asChild size="lg">
+                  <a href={data.primaryCtaUrl} target="_blank" rel="noopener noreferrer">
+                    {data.primaryCtaLabel}
+                  </a>
+                </Button>
+              ) : (
+                <Button asChild size="lg">
+                  <Link to={data.primaryCtaUrl}>{data.primaryCtaLabel}</Link>
+                </Button>
+              )}
+              {isExternal(data.secondaryCtaUrl) ? (
+                <Button asChild size="lg" variant="outline">
+                  <a href={data.secondaryCtaUrl} target="_blank" rel="noopener noreferrer">
+                    {data.secondaryCtaLabel}
+                  </a>
+                </Button>
+              ) : (
+                <Button asChild size="lg" variant="outline">
+                  <Link to={data.secondaryCtaUrl}>{data.secondaryCtaLabel}</Link>
+                </Button>
+              )}
             </div>
           </ScrollReveal>
         </div>

@@ -58,45 +58,58 @@ function resolveAbsoluteUrl(value: string) {
   return new URL(value, `${window.location.origin}${import.meta.env.BASE_URL}`).toString();
 }
 
+function isSeoConfig(value: unknown): value is SeoConfig {
+  if (!value || typeof value !== "object") return false;
+  const candidate = value as Record<string, unknown>;
+  return typeof candidate.title === "string" && typeof candidate.description === "string";
+}
+
 function App() {
   const location = useLocation();
-  const [edition2026Seo, setEdition2026Seo] = useState<SeoConfig | null>(null);
+  const [dynamicSeo, setDynamicSeo] = useState<SeoConfig | null>(null);
 
   useEffect(() => {
     let active = true;
+    const jsonSourcesByPath: Record<string, string> = {
+      "/": `${import.meta.env.BASE_URL}home/home.json`,
+      "/2025": `${import.meta.env.BASE_URL}2025/evento-2025.json`,
+      "/2026": `${import.meta.env.BASE_URL}2026/evento-2026.json`,
+      "/2019": `${import.meta.env.BASE_URL}2019/seo-2019.json`,
+    };
+    const source = jsonSourcesByPath[location.pathname];
 
-    if (location.pathname !== "/2026") {
-      setEdition2026Seo(null);
+    if (!source) {
+      setDynamicSeo(null);
       return () => {
         active = false;
       };
     }
 
-    async function load2026Seo() {
+    async function loadSeo() {
       try {
-        const response = await fetch(
-          `${import.meta.env.BASE_URL}2026/evento-2026.json`,
-          { cache: "no-store" }
-        );
+        const response = await fetch(source, { cache: "no-store" });
         if (!response.ok) {
+          if (active) setDynamicSeo(null);
           return;
         }
 
-        const data = (await response.json()) as {
-          seo?: SeoConfig;
-        };
+        const data = (await response.json()) as unknown;
+        const payload = data as { seo?: unknown };
+        const seoValue = payload.seo ?? data;
 
-        if (active && data.seo) {
-          setEdition2026Seo(data.seo);
+        if (active && isSeoConfig(seoValue)) {
+          setDynamicSeo(seoValue);
+        } else if (active) {
+          setDynamicSeo(null);
         }
       } catch {
         if (active) {
-          setEdition2026Seo(null);
+          setDynamicSeo(null);
         }
       }
     }
 
-    load2026Seo();
+    loadSeo();
 
     return () => {
       active = false;
@@ -197,8 +210,8 @@ function App() {
 
     const base = seoByPath[location.pathname] ?? seoByPath["/"];
     const current =
-      location.pathname === "/2026" && edition2026Seo
-        ? { ...base, ...edition2026Seo }
+      dynamicSeo
+        ? { ...base, ...dynamicSeo }
         : base;
     const canonical = current.canonicalUrl ?? `${window.location.origin}${window.location.pathname}`;
     document.title = current.title;
@@ -262,7 +275,7 @@ function App() {
       content: current.noindex ? "noindex, nofollow" : "index, follow",
     });
     ensureCanonical(canonical);
-  }, [location.pathname, edition2026Seo]);
+  }, [location.pathname, dynamicSeo]);
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">

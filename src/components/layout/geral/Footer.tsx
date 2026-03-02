@@ -67,8 +67,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/#parceiros" className="text-sm hover:underline">
-                  Parceiros
+                <Link to="/#comissao" className="text-sm hover:underline">
+                  Comissão
+                </Link>
+              </li>
+              <li>
+                <Link to="/#faq" className="text-sm hover:underline">
+                  FAQ
                 </Link>
               </li>
               <li>

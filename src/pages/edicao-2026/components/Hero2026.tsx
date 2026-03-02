@@ -49,10 +49,7 @@ export function Hero2026({ data }: Hero2026Props) {
           <h1 className="tlou-title text-3xl sm:text-5xl lg:text-6xl font-black leading-tight">
             {data.hero.title}
           </h1>
-          <p className="mt-2 text-base sm:text-lg lg:text-xl text-amber-200/90 uppercase tracking-[0.12em] tlou-subtitle">
-            {data.hero.subtitle}
-          </p>
-          <p className="mt-6 text-base sm:text-lg text-stone-200/90 max-w-3xl mx-auto tlou-body">
+          <p className="mt-4 text-base sm:text-lg text-stone-200/90 max-w-2xl mx-auto tlou-body">
             {data.hero.description}
           </p>
 
