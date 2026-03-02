@@ -22,6 +22,7 @@ export default function Header() {
             </span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
+            <Link to="/2026">Edição 2026</Link>
             <Link to="/2025">Edição 2025</Link>
             <Link to="/2019">Edição 2019</Link>
             <Link to="/#sobre">Sobre</Link>
@@ -51,6 +52,9 @@ export default function Header() {
               <span className="font-bold">Semana da Computação</span>
             </Link>
             <div className="mt-6 flex flex-col space-y-4">
+              <Link to="/2026" className="text-sm font-medium">
+                Edição 2026
+              </Link>
               <Link to="/2025" className="text-sm font-medium">
                 Edição 2025
               </Link>
@@ -73,7 +77,13 @@ export default function Header() {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <ModeToggle />
           <Button asChild>
-            <Link to="/inscricao">Inscreva-se</Link>
+            <a
+              href="https://www.even3.com.br/ix-semana-da-computacao-ufrj-2026/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Inscreva-se
+            </a>
           </Button>
         </div>
       </div>

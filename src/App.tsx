@@ -4,8 +4,10 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/geral/HomePage";
 import Edicao2025Page from "./pages/edicao-2025";
 import Edicao2019Page from "./pages/edicao-2019";
+import Edicao2026Page from "./pages/edicao-2026";
 import Layout from "./components/layout/geral/Layout";
 import Layout2025 from "./pages/edicao-2025/layout/Layout2025";
+import Layout2026 from "./pages/edicao-2026/layout/Layout2026";
 import LoginPage from "./pages/geral/LoginPage";
 
 type SeoConfig = {
@@ -51,6 +53,11 @@ function App() {
         title: "Edição 2025 | Semana da Computação UFRJ",
         description:
           "Conheça os detalhes da edição 2025 da Semana da Computação UFRJ: programação, informações gerais e atualizações.",
+      },
+      "/2026": {
+        title: "Edição 2026 | Semana da Computação UFRJ",
+        description:
+          "Página oficial da edição 2026 da Semana da Computação UFRJ com tema The Last of Us, programação dinâmica e inscrições no Even3.",
       },
       "/2019": {
         title: "Edição 2019 (Histórica) | Semana da Computação UFRJ",
@@ -126,6 +133,15 @@ function App() {
           <Route path="/parceiros" element={<div>Parceiros - Em breve</div>} />
           <Route path="/inscricao" element={<div>Inscrição - Em breve</div>} />
         </Route>
+
+        <Route
+          path="/2026"
+          element={
+            <Layout2026>
+              <Edicao2026Page />
+            </Layout2026>
+          }
+        />
 
         <Route
           path="/2025"

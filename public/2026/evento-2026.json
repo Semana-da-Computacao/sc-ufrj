@@ -1,0 +1,764 @@
+{
+  "year": 2026,
+  "theme": {
+    "name": "The Last of Us - Temporada 2",
+    "visualDirection": "Atmosfera pós-apocalíptica com foco em resiliência, colaboração e tomada de decisão"
+  },
+  "hero": {
+    "badge": "13 a 17 de abril de 2026 • CCMN/UFRJ",
+    "title": "Semana da Computação UFRJ 2026",
+    "subtitle": "When You Are Lost in the Darkness",
+    "description": "Uma edição pensada para conectar formação acadêmica, mercado e protagonismo estudantil com trilhas práticas e palestras estratégicas.",
+    "highlights": [
+      "Trilhas simultâneas em Auditório + Salas",
+      "Palestras com mercado e pesquisa",
+      "Workshops práticos com mentoria"
+    ]
+  },
+  "eventInfo": {
+    "dateRangeLabel": "13 a 17 de abril de 2026",
+    "location": "CCMN - UFRJ, Ilha do Fundão",
+    "status": "Inscrições abertas",
+    "description": "A programação foi desenhada para atender diferentes níveis de experiência, com sessões práticas, painéis estratégicos e espaços de conexão com profissionais e pesquisadores."
+  },
+  "links": {
+    "even3": "https://www.even3.com.br/ix-semana-da-computacao-ufrj-2026/",
+    "instagram": "https://www.instagram.com/semanadacomputacaoufrj/"
+  },
+  "assets": {
+    "heroFallbackGif": "https://images.steamusercontent.com/ugc/1690520848830870076/6D7F87B6843ED09744C2F1A0182AC499C6972699/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+    "heroRightImage": "2026/hero-right.png",
+    "zombieLeft": "2026/zombie-left.png",
+    "zombieRight": "2026/zombie-right.png"
+  },
+  "seo": {
+    "title": "Semana da Computação UFRJ 2026 | Programação Oficial",
+    "description": "Acompanhe a edição 2026 da Semana da Computação UFRJ: programação completa, patrocinadores, palestrantes e inscrições no Even3.",
+    "keywords": "Semana da Computação UFRJ 2026, UFRJ, computação, programação, palestras, workshops, Even3, tecnologia",
+    "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/2026",
+    "ogImage": "2026/seo-banner-2026.png",
+    "twitterImage": "2026/seo-banner-2026.png",
+    "twitterCard": "summary_large_image",
+    "siteName": "Semana da Computação UFRJ",
+    "ogType": "website"
+  },
+  "sponsors": {
+    "title": "Patrocinadores e Parceiros",
+    "subtitle": "Quem fortalece a Semana da Computação 2026.",
+    "tiers": [
+      {
+        "type": 1,
+        "label": "Patrocinador Master",
+        "description": "Maior destaque da edição.",
+        "brands": [
+          {
+            "name": "NVIDIA",
+            "logoUrl": "2026/sponsors/nvidia-mock.png",
+            "website": "https://www.nvidia.com/"
+          },
+          {
+            "name": "Google Cloud",
+            "logoUrl": "2026/sponsors/google-cloud-mock.png",
+            "website": "https://cloud.google.com/"
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "label": "Patrocinadores Gold",
+        "description": "Apoio estratégico para trilhas e workshops.",
+        "brands": [
+          {
+            "name": "Rocketseat",
+            "logoUrl": "2026/sponsors/rocketseat-mock.png",
+            "website": "https://www.rocketseat.com.br/"
+          },
+          {
+            "name": "Alura",
+            "logoUrl": "2026/sponsors/alura-mock.png",
+            "website": "https://www.alura.com.br/"
+          },
+          {
+            "name": "AWS",
+            "logoUrl": "2026/sponsors/aws-mock.png",
+            "website": "https://aws.amazon.com/"
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "label": "Patrocinadores Silver",
+        "description": "Apoio complementar para ações da semana.",
+        "brands": [
+          {
+            "name": "Vercel",
+            "logoUrl": "2026/sponsors/vercel-mock.png",
+            "website": "https://vercel.com/"
+          },
+          {
+            "name": "DigitalOcean",
+            "logoUrl": "2026/sponsors/digitalocean-mock.png",
+            "website": "https://www.digitalocean.com/"
+          },
+          {
+            "name": "MongoDB",
+            "logoUrl": "2026/sponsors/mongodb-mock.png",
+            "website": "https://www.mongodb.com/"
+          },
+          {
+            "name": "Figma",
+            "logoUrl": "2026/sponsors/figma-mock.png",
+            "website": "https://www.figma.com/"
+          }
+        ]
+      }
+    ],
+    "partners": [
+      {
+        "name": "UFRJ",
+        "logoUrl": "2026/sponsors/ufrj-mock.png",
+        "website": "https://ufrj.br/"
+      },
+      {
+        "name": "CCMN",
+        "logoUrl": "2026/sponsors/ccmn-mock.png",
+        "website": "https://www.ccmn.ufrj.br/"
+      },
+      {
+        "name": "IEEE",
+        "logoUrl": "2026/sponsors/ieee-mock.png",
+        "website": "https://www.ieee.org/"
+      },
+      {
+        "name": "SBC",
+        "logoUrl": "2026/sponsors/sbc-mock.png",
+        "website": "https://www.sbc.org.br/"
+      },
+      {
+        "name": "NIC.br",
+        "logoUrl": "2026/sponsors/nicbr-mock.png",
+        "website": "https://nic.br/"
+      }
+    ]
+  },
+  "storySections": [
+    {
+      "id": "sobre-edicao",
+      "kicker": "A edição 2026",
+      "title": "Uma semana para evoluir técnica, visão e rede",
+      "description": "A Semana da Computação 2026 foi planejada para integrar formação acadêmica e desafios reais de mercado. O foco é oferecer conteúdo aplicável, com trilhas que ajudam cada participante a montar sua própria jornada de aprendizado.",
+      "imageUrl": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1400&q=80"
+    },
+    {
+      "id": "experiencia",
+      "kicker": "Experiência imersiva",
+      "title": "Conteúdo técnico com narrativa inspirada na série",
+      "description": "Inspirada no universo de The Last of Us, a identidade visual da edição reforça a ideia de resiliência e colaboração. Em cada dia, auditório e salas temáticas se complementam para criar uma experiência intensa e memorável.",
+      "imageUrl": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1400&q=80"
+    },
+    {
+      "id": "comunidade",
+      "kicker": "Comunidade e carreira",
+      "title": "Encontros com profissionais, pesquisadores e alumni",
+      "description": "Além das palestras e workshops, a programação abre espaço para conexões estratégicas com pessoas que já percorreram diferentes caminhos na área. O objetivo é ampliar repertório, visibilidade e oportunidades para toda a comunidade.",
+      "imageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
+    }
+  ],
+  "days": [
+    {
+      "id": "2026-04-13",
+      "label": "Segunda-feira",
+      "dateLabel": "13/04/2026",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "10:15",
+              "title": "Abertura Oficial: Luz na Escuridão",
+              "speaker": "Comissão SC UFRJ + Convidados",
+              "type": "Abertura",
+              "description": "Boas-vindas e visão geral da edição 2026.",
+              "presenters": [
+                {
+                  "name": "Prof. Dr. Henrique Moraes",
+                  "role": "Coordenador do Curso de Ciência da Computação",
+                  "photoUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "lattes": "http://lattes.cnpq.br/1234567890123456",
+                    "linkedin": "https://www.linkedin.com/in/henrique-moraes/",
+                    "email": "henrique.moraes@dcc.ufrj.br"
+                  }
+                },
+                {
+                  "name": "Leticia Barreto",
+                  "role": "Presidente da Comissão Organizadora",
+                  "photoUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/leticia-barreto-tech/",
+                    "instagram": "https://www.instagram.com/leticiabarretto/"
+                  }
+                }
+              ],
+              "trail": {
+                "key": "carreira",
+                "label": "Carreira"
+              }
+            },
+            {
+              "time": "10:40",
+              "endTime": "12:00",
+              "title": "IA Generativa: do hype ao produto",
+              "speaker": "Marina Ferraz",
+              "type": "Palestra",
+              "description": "Arquitetura, custos e risco de alucinação em soluções baseadas em LLM.",
+              "presenters": [
+                {
+                  "name": "Marina Ferraz",
+                  "role": "Staff ML Engineer",
+                  "photoUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/marinaferrazml/",
+                    "instagram": "https://www.instagram.com/marina.ferraz.ai/",
+                    "email": "marina.ferraz@example.com"
+                  }
+                }
+              ],
+              "trail": {
+                "key": "carreira",
+                "label": "Carreira"
+              }
+            },
+            {
+              "time": "16:20",
+              "endTime": "17:30",
+              "title": "Observabilidade sem Dor: logs, métricas e tracing",
+              "speaker": "Paula Nogueira",
+              "type": "Palestra",
+              "trail": {
+                "key": "backend",
+                "label": "Backend"
+              },
+              "description": "Estratégia prática para monitorar aplicações e reduzir tempo de resposta a incidentes.",
+              "presenters": [
+                {
+                  "name": "Paula Nogueira",
+                  "role": "SRE Lead",
+                  "photoUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/paula-nogueira-sre/",
+                    "email": "paula.nogueira@example.com"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sala B101",
+          "sessions": [
+            {
+              "time": "14:00",
+              "endTime": "16:00",
+              "title": "Workshop: APIs robustas com Node e TypeScript",
+              "speaker": "Joao Lacerda e Camila Torres",
+              "type": "Workshop",
+              "description": "Construção guiada de API com validação, testes e observabilidade.",
+              "presenters": [
+                {
+                  "name": "Joao Lacerda",
+                  "role": "Senior Backend Engineer",
+                  "photoUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/joao-lacerda/",
+                    "email": "joao.lacerda@example.com"
+                  }
+                },
+                {
+                  "name": "Camila Torres",
+                  "role": "Software Architect",
+                  "photoUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "lattes": "http://lattes.cnpq.br/9988776655443322",
+                    "linkedin": "https://www.linkedin.com/in/camila-torres-arch/"
+                  }
+                }
+              ],
+              "trail": {
+                "key": "webdev",
+                "label": "WebDev"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-04-14",
+      "label": "Terça-feira",
+      "dateLabel": "14/04/2026",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:30",
+              "endTime": "11:00",
+              "title": "Arquitetura de Sistemas Escaláveis em Território Hostil",
+              "speaker": "Rafael Guedes",
+              "type": "Palestra",
+              "description": "Trade-offs entre performance, custo e simplicidade em produtos em crescimento.",
+              "presenters": [
+                {
+                  "name": "Rafael Guedes",
+                  "role": "Principal Engineer",
+                  "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/rafael-guedes-eng/",
+                    "instagram": "https://www.instagram.com/rafaelcodes/"
+                  }
+                }
+              ],
+              "trail": {
+                "key": "carreira",
+                "label": "Carreira"
+              }
+            },
+            {
+              "time": "11:20",
+              "endTime": "12:20",
+              "title": "Painel de Carreira: da faculdade ao primeiro impacto",
+              "speaker": "Alumni UFRJ",
+              "type": "Painel",
+              "description": "Discussão sobre estágio, portfólio e crescimento profissional.",
+              "presenters": [
+                {
+                  "name": "Bruno Azevedo",
+                  "role": "Engenheiro de Software Pleno",
+                  "photoUrl": "https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/brunoazevedodev/",
+                    "email": "bruno.azevedo@example.com"
+                  }
+                },
+                {
+                  "name": "Aline Monteiro",
+                  "role": "Product Manager",
+                  "photoUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/alinemonteiro-pm/",
+                    "instagram": "https://www.instagram.com/alinemonteiropm/"
+                  }
+                },
+                {
+                  "name": "Pedro Nascimento",
+                  "role": "Data Scientist",
+                  "photoUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "lattes": "http://lattes.cnpq.br/1122334455667788"
+                  }
+                }
+              ],
+              "trail": {
+                "key": "carreira",
+                "label": "Carreira"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sala B201",
+          "sessions": [
+            {
+              "time": "14:00",
+              "endTime": "16:00",
+              "title": "Minicurso: Segurança aplicada para times de produto",
+              "speaker": "Nina Carvalho e Otavio Lima",
+              "type": "Minicurso",
+              "description": "Ameaças reais, superfície de ataque e checklist de segurança para releases.",
+              "presenters": [
+                {
+                  "name": "Nina Carvalho",
+                  "role": "Security Engineer",
+                  "photoUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/ninacarvalho-sec/",
+                    "email": "nina.carvalho@example.com"
+                  }
+                },
+                {
+                  "name": "Otavio Lima",
+                  "role": "Application Security Specialist",
+                  "photoUrl": "https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/otavio-lima-appsec/"
+                  }
+                }
+              ],
+              "trail": {
+                "key": "seguranca",
+                "label": "Segurança"
+              }
+            },
+            {
+              "time": "16:20",
+              "endTime": "17:30",
+              "title": "Threat Modeling para times ágeis",
+              "speaker": "Larissa Falcão",
+              "type": "Workshop",
+              "trail": {
+                "key": "seguranca",
+                "label": "Segurança"
+              },
+              "description": "Como identificar ameaças cedo e incluir segurança no ciclo de desenvolvimento.",
+              "presenters": [
+                {
+                  "name": "Larissa Falcão",
+                  "role": "Product Security Engineer",
+                  "photoUrl": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/larissa-falcao-sec/",
+                    "instagram": "https://www.instagram.com/larissa.sec/"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-04-15",
+      "label": "Quarta-feira",
+      "dateLabel": "15/04/2026",
+      "tracks": [
+        {
+          "name": "Laboratório C302",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "11:30",
+              "title": "Hands-on: Dados para Produto com SQL + BI",
+              "speaker": "Juliana Prado",
+              "type": "Oficina",
+              "description": "Coleta, modelagem e métricas de produto em laboratório prático.",
+              "presenters": [
+                {
+                  "name": "Juliana Prado",
+                  "role": "Analytics Engineer",
+                  "photoUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/juliana-prado-data/",
+                    "instagram": "https://www.instagram.com/julianapradosql/",
+                    "email": "juliana.prado@example.com"
+                  }
+                }
+              ],
+              "trail": {
+                "key": "frontend",
+                "label": "Frontend"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "11:40",
+              "endTime": "12:30",
+              "title": "Produto orientado a dados sem perder contexto humano",
+              "speaker": "Eduardo Bittencourt",
+              "type": "Palestra",
+              "trail": {
+                "key": "dados",
+                "label": "Dados"
+              },
+              "description": "Framework de decisão para equilibrar métricas, narrativa e impacto para o usuário.",
+              "presenters": [
+                {
+                  "name": "Eduardo Bittencourt",
+                  "role": "Head de Analytics",
+                  "photoUrl": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/eduardo-bittencourt-data/"
+                  }
+                }
+              ]
+            },
+            {
+              "time": "14:30",
+              "endTime": "16:00",
+              "title": "Mesa-redonda: Ética, IA e Sociedade",
+              "speaker": "Docentes e mercado",
+              "type": "Mesa-redonda",
+              "description": "Impactos sociais de IA e responsabilidade técnica na construção de produtos.",
+              "presenters": [
+                {
+                  "name": "Profa. Dra. Renata Lemos",
+                  "role": "Pesquisadora em IA e Sociedade",
+                  "photoUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "lattes": "http://lattes.cnpq.br/5566778899001122",
+                    "linkedin": "https://www.linkedin.com/in/renata-lemos-ia/"
+                  }
+                },
+                {
+                  "name": "Diego Farias",
+                  "role": "Head de Dados",
+                  "photoUrl": "https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/diegofariasdata/",
+                    "email": "diego.farias@example.com"
+                  }
+                }
+              ],
+              "trail": {
+                "key": "ia",
+                "label": "IA"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-04-16",
+      "label": "Quinta-feira",
+      "dateLabel": "16/04/2026",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "10:20",
+              "title": "Engenharia de Plataforma para times de produto",
+              "speaker": "Thiago Campelo",
+              "type": "Palestra",
+              "trail": {
+                "key": "backend",
+                "label": "Backend"
+              },
+              "description": "Como plataformas internas aceleram entregas e melhoram qualidade em escala.",
+              "presenters": [
+                {
+                  "name": "Thiago Campelo",
+                  "role": "Staff Platform Engineer",
+                  "photoUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/thiago-campelo-platform/",
+                    "email": "thiago.campelo@example.com"
+                  }
+                }
+              ]
+            },
+            {
+              "time": "10:40",
+              "endTime": "12:00",
+              "title": "Painel: Gestão de carreira em tecnologia",
+              "speaker": "Lideranças convidadas",
+              "type": "Painel",
+              "trail": {
+                "key": "carreira",
+                "label": "Carreira"
+              },
+              "description": "Progressão técnica, liderança e escolhas de especialização em diferentes contextos.",
+              "presenters": [
+                {
+                  "name": "Bianca Almeida",
+                  "role": "Engineering Manager",
+                  "photoUrl": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/bianca-almeida-eng/",
+                    "instagram": "https://www.instagram.com/bianca.eng/"
+                  }
+                },
+                {
+                  "name": "Carlos Menezes",
+                  "role": "Principal Architect",
+                  "photoUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/carlos-menezes-arch/"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sala B102",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "11:00",
+              "title": "Frontend moderno: performance e acessibilidade",
+              "speaker": "Renata Guimarães",
+              "type": "Workshop",
+              "trail": {
+                "key": "frontend",
+                "label": "Frontend"
+              },
+              "description": "Boas práticas para interfaces rápidas, acessíveis e fáceis de manter.",
+              "presenters": [
+                {
+                  "name": "Renata Guimarães",
+                  "role": "Senior Frontend Engineer",
+                  "photoUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/renata-guimaraes-frontend/",
+                    "email": "renata.guimaraes@example.com"
+                  }
+                }
+              ]
+            },
+            {
+              "time": "14:00",
+              "endTime": "16:00",
+              "title": "Design systems na prática com times pequenos",
+              "speaker": "Gustavo Maciel",
+              "type": "Oficina",
+              "trail": {
+                "key": "frontend",
+                "label": "Frontend"
+              },
+              "description": "Como estruturar tokens, componentes e padrões para evoluir produtos com consistência.",
+              "presenters": [
+                {
+                  "name": "Gustavo Maciel",
+                  "role": "Product Designer",
+                  "photoUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/gustavo-maciel-design/"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Laboratório C302",
+          "sessions": [
+            {
+              "time": "14:00",
+              "endTime": "17:00",
+              "title": "Cloud deployment para aplicações web",
+              "speaker": "Fernanda Rios",
+              "type": "Minicurso",
+              "trail": {
+                "key": "cloud",
+                "label": "Cloud"
+              },
+              "description": "Pipeline de deploy com observabilidade, rollback e boas práticas operacionais.",
+              "presenters": [
+                {
+                  "name": "Fernanda Rios",
+                  "role": "Cloud Solutions Architect",
+                  "photoUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/fernanda-rios-cloud/",
+                    "email": "fernanda.rios@example.com"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026-04-17",
+      "label": "Sexta-feira",
+      "dateLabel": "17/04/2026",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:30",
+              "endTime": "10:50",
+              "title": "O futuro do desenvolvimento com IA assistiva",
+              "speaker": "Helena Duarte",
+              "type": "Palestra",
+              "trail": {
+                "key": "ia",
+                "label": "IA"
+              },
+              "description": "Como copilotos e agentes estão alterando produtividade e qualidade no desenvolvimento.",
+              "presenters": [
+                {
+                  "name": "Helena Duarte",
+                  "role": "AI Product Lead",
+                  "photoUrl": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/helena-duarte-ai/",
+                    "instagram": "https://www.instagram.com/helena.ai/"
+                  }
+                }
+              ]
+            },
+            {
+              "time": "11:10",
+              "endTime": "12:30",
+              "title": "Encerramento: comunidade, oportunidades e próximos passos",
+              "speaker": "Comissão SC UFRJ",
+              "type": "Painel",
+              "trail": {
+                "key": "carreira",
+                "label": "Carreira"
+              },
+              "description": "Síntese da edição, agradecimentos e convite para continuidade da comunidade.",
+              "presenters": [
+                {
+                  "name": "Comissão SC UFRJ",
+                  "role": "Organização",
+                  "photoUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "instagram": "https://www.instagram.com/semanadacomputacaoufrj/",
+                    "email": "semanadacomputacao@dcc.ufrj.br"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sala B101",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "11:30",
+              "title": "Mentoria de portfólio e currículo",
+              "speaker": "Mentores convidados",
+              "type": "Oficina",
+              "trail": {
+                "key": "carreira",
+                "label": "Carreira"
+              },
+              "description": "Feedback individual em currículo, LinkedIn e projetos para estágio e vagas júnior.",
+              "presenters": [
+                {
+                  "name": "Vinicius Rocha",
+                  "role": "Tech Recruiter",
+                  "photoUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/vinicius-rocha-recruiter/"
+                  }
+                },
+                {
+                  "name": "Priscila Ramos",
+                  "role": "Career Mentor",
+                  "photoUrl": "https://images.unsplash.com/photo-1546961329-78bef0414d7c?auto=format&fit=crop&w=600&q=80",
+                  "socials": {
+                    "linkedin": "https://www.linkedin.com/in/priscila-ramos-mentor/"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

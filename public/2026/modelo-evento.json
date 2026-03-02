@@ -1,0 +1,140 @@
+{
+  "year": 2026,
+  "theme": {
+    "name": "Tema da edição",
+    "visualDirection": "Descrição curta da estética visual"
+  },
+  "hero": {
+    "badge": "Datas do evento",
+    "title": "Título principal do evento",
+    "subtitle": "Subtítulo curto",
+    "description": "Texto de abertura com foco no evento",
+    "highlights": [
+      "Destaque 1",
+      "Destaque 2",
+      "Destaque 3"
+    ]
+  },
+  "eventInfo": {
+    "dateRangeLabel": "Ex: 06 a 10 de abril de 2026",
+    "location": "Local do evento",
+    "status": "Inscrições abertas",
+    "description": "Resumo da proposta do evento"
+  },
+  "links": {
+    "even3": "https://www.even3.com.br/seu-link-aqui/",
+    "instagram": "https://www.instagram.com/seu-perfil/"
+  },
+  "assets": {
+    "heroFallbackGif": "2026/bg-hero.gif",
+    "heroRightImage": "2026/hero-right.png",
+    "zombieLeft": "2026/zombie-left.png",
+    "zombieRight": "2026/zombie-right.png"
+  },
+  "seo": {
+    "title": "Título SEO da página 2026",
+    "description": "Descrição SEO da página 2026",
+    "keywords": "palavra-chave 1, palavra-chave 2",
+    "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/2026",
+    "ogImage": "2026/seo-banner-2026.png",
+    "twitterImage": "2026/seo-banner-2026.png",
+    "twitterCard": "summary_large_image",
+    "siteName": "Semana da Computação UFRJ",
+    "ogType": "website"
+  },
+  "sponsors": {
+    "title": "Patrocinadores e Parceiros",
+    "subtitle": "Texto de apoio opcional",
+    "tiers": [
+      {
+        "type": 1,
+        "label": "Patrocinador Master",
+        "description": "Maior destaque visual",
+        "brands": [
+          {
+            "name": "Empresa A",
+            "logoUrl": "2026/sponsors/logo-master-mock.png",
+            "website": "https://site.com"
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "label": "Patrocinador Gold",
+        "description": "Destaque intermediário",
+        "brands": [
+          {
+            "name": "Empresa B",
+            "logoUrl": "2026/sponsors/logo-gold-mock.png"
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "label": "Patrocinador Silver",
+        "description": "Destaque complementar",
+        "brands": [
+          {
+            "name": "Empresa C",
+            "logoUrl": "2026/sponsors/logo-silver-mock.png"
+          }
+        ]
+      }
+    ],
+    "partners": [
+      {
+        "name": "Parceiro 1",
+        "logoUrl": "2026/sponsors/logo-partner-mock.png",
+        "website": "https://site.com/parceiro"
+      }
+    ]
+  },
+  "storySections": [
+    {
+      "id": "jornada",
+      "kicker": "Narrativa",
+      "title": "Título da seção",
+      "description": "Texto da seção com contexto do evento e proposta da edição.",
+      "imageUrl": "https://site.com/imagem.jpg"
+    }
+  ],
+  "days": [
+    {
+      "id": "2026-04-06",
+      "label": "Segunda-feira",
+      "dateLabel": "06/04/2026",
+      "tracks": [
+        {
+          "name": "Auditório",
+          "sessions": [
+            {
+              "time": "09:00",
+              "endTime": "10:30",
+              "title": "Título da atividade",
+              "speaker": "Nome da pessoa convidada",
+              "type": "Palestra",
+              "trail": {
+                "key": "webdev",
+                "label": "WebDev"
+              },
+              "description": "Resumo curto da atividade",
+              "presenters": [
+                {
+                  "name": "Nome completo",
+                  "role": "Cargo/função",
+                  "photoUrl": "https://site.com/foto.jpg",
+                  "socials": {
+                    "lattes": "http://lattes.cnpq.br/0000000000000000",
+                    "linkedin": "https://www.linkedin.com/in/usuario/",
+                    "instagram": "https://www.instagram.com/usuario/",
+                    "email": "nome@dominio.com"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
