@@ -81,6 +81,11 @@ export default function Footer() {
                   Galeria
                 </Link>
               </li>
+              <li>
+                <Link to="/links" className="text-sm hover:underline">
+                  Links
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

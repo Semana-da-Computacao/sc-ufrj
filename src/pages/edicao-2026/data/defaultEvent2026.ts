@@ -25,6 +25,16 @@ export const defaultEvent2026Data: EventEditionData = {
     even3: "https://www.even3.com.br/",
     instagram: "https://www.instagram.com/semanadacomputacaoufrj/",
   },
+  presentationSubmission: {
+    title: "Inscrições para apresentar",
+    description: "Submeta sua apresentação para participar da programação da edição 2026.",
+    deadline: "Até 23:59 de 09/03/2026",
+    date: "23 a 27 de março de 2026",
+    time: "9h às 17h",
+    location: "Ilha do Fundão - UFRJ",
+    contactEmail: "semanadacomputacao@ic.ufrj.br",
+    formUrl: "https://forms.gle/WQqS2bn8137Xvnz47",
+  },
   assets: {
     heroFallbackGif: "2026/bg-hero.gif",
     heroRightImage: "2026/hero-right.png",

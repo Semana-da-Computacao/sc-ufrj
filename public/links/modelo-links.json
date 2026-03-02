@@ -1,0 +1,105 @@
+{
+  "profile": {
+    "name": "Nome da organizacao",
+    "handle": "@perfil",
+    "bio": "Descricao curta da pagina de links",
+    "avatarUrl": "Logo_SC_2025_DVPF.svg",
+    "location": "Cidade/Local"
+  },
+  "header": {
+    "badge": "Titulo pequeno",
+    "title": "Titulo principal da pagina de links",
+    "subtitle": "Subtitulo explicando o objetivo",
+    "announcement": "Aviso opcional",
+    "heroVideoUrl": "https://www.youtube.com/watch?v=SEU_VIDEO"
+  },
+  "primaryLinks": [
+    {
+      "label": "Texto do botao",
+      "subtitle": "Texto de apoio",
+      "url": "https://seu-link.com",
+      "icon": "ticket"
+    }
+  ],
+  "sections": [
+    {
+      "id": "secao-1",
+      "title": "Titulo da secao",
+      "subtitle": "Subtitulo opcional",
+      "layout": "grid",
+      "cards": [
+        {
+          "id": "card-link",
+          "type": "link",
+          "title": "Card de link simples",
+          "description": "Descricao curta",
+          "url": "https://seu-link.com",
+          "ctaLabel": "Abrir",
+          "icon": "link"
+        },
+        {
+          "id": "card-featured",
+          "type": "featured",
+          "title": "Card destaque",
+          "description": "Descricao",
+          "meta": "Texto de destaque",
+          "url": "https://seu-link.com",
+          "ctaLabel": "Acessar",
+          "icon": "sparkles"
+        },
+        {
+          "id": "card-video",
+          "type": "video",
+          "title": "Card de video",
+          "description": "Descricao do video",
+          "videoUrl": "https://www.youtube.com/watch?v=SEU_VIDEO",
+          "ctaUrl": "https://youtube.com",
+          "ctaLabel": "Mais videos",
+          "icon": "youtube"
+        },
+        {
+          "id": "card-grid",
+          "type": "grid",
+          "title": "Card com grid",
+          "description": "Descricao do grupo de links",
+          "columns": 3,
+          "icon": "globe",
+          "items": [
+            {
+              "label": "Item 1",
+              "url": "https://seu-link.com",
+              "icon": "link"
+            }
+          ]
+        },
+        {
+          "id": "card-contact",
+          "type": "contact",
+          "title": "Card de contato",
+          "description": "Descricao de suporte",
+          "email": "contato@dominio.com",
+          "links": [
+            {
+              "label": "Instagram",
+              "url": "https://instagram.com/seu-perfil",
+              "icon": "instagram"
+            }
+          ],
+          "icon": "mail"
+        }
+      ]
+    }
+  ],
+  "footerNote": "Rodape opcional.",
+  "seo": {
+    "title": "Titulo SEO",
+    "description": "Descricao SEO",
+    "keywords": "palavra1, palavra2",
+    "canonicalUrl": "https://seu-dominio/links",
+    "ogImage": "Logo_SC_2025_DVPF.svg",
+    "twitterImage": "Logo_SC_2025_DVPF.svg",
+    "twitterCard": "summary_large_image",
+    "siteName": "Nome do site",
+    "ogType": "website"
+  }
+}

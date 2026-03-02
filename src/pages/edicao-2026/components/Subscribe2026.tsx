@@ -7,6 +7,8 @@ interface Subscribe2026Props {
 }
 
 export default function Subscribe2026({ data }: Subscribe2026Props) {
+  const submission = data.presentationSubmission;
+
   return (
     <section id="inscricoes" className="relative py-20 md:py-24 bg-zinc-900 text-stone-100">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_28%,rgba(21,128,61,0.2),transparent_35%),radial-gradient(circle_at_82%_76%,rgba(120,53,15,0.25),transparent_42%)]" />
@@ -23,6 +25,11 @@ export default function Subscribe2026({ data }: Subscribe2026Props) {
                 Ir para o Even3
               </a>
             </Button>
+            <Button asChild size="lg" className="bg-amber-700 hover:bg-amber-600 text-white">
+              <a href={submission.formUrl} target="_blank" rel="noopener noreferrer">
+                {submission.title}
+              </a>
+            </Button>
             <Button
               variant="outline"
               size="lg"
@@ -33,6 +40,25 @@ export default function Subscribe2026({ data }: Subscribe2026Props) {
                 Acompanhar no Instagram
               </a>
             </Button>
+          </div>
+
+          <div className="mt-7 rounded-2xl border border-amber-500/30 bg-amber-900/15 p-5 text-left">
+            <p className="text-amber-100 font-semibold">{submission.description}</p>
+            <p className="mt-2 text-stone-200">
+              O formulário ficará aberto até <strong>{submission.deadline}</strong>.
+            </p>
+            <p className="mt-2 text-stone-300">Data: {submission.date}</p>
+            <p className="text-stone-300">Horário: {submission.time}</p>
+            <p className="text-stone-300">Local: {submission.location}</p>
+            <p className="mt-2 text-stone-200">
+              Em caso de dúvidas:{" "}
+              <a
+                href={`mailto:${submission.contactEmail}`}
+                className="underline underline-offset-2 hover:text-amber-200"
+              >
+                {submission.contactEmail}
+              </a>
+            </p>
           </div>
         </ScrollReveal>
       </div>

@@ -29,6 +29,7 @@ export default function Header() {
             <Link to="/#comissao">Comissão</Link>
             <Link to="/#faq">FAQ</Link>
             <Link to="/fotos">Galeria</Link>
+            <Link to="/links">Links</Link>
           </nav>
         </div>
 
@@ -73,6 +74,9 @@ export default function Header() {
               </Link>
               <Link to="/fotos" className="text-sm font-medium">
                 Galeria
+              </Link>
+              <Link to="/links" className="text-sm font-medium">
+                Links
               </Link>
             </div>
           </SheetContent>

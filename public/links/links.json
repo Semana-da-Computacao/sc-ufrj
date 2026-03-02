@@ -1,0 +1,143 @@
+{
+  "profile": {
+    "name": "Semana da Computacao UFRJ",
+    "handle": "@semanadacomputacaoufrj",
+    "bio": "Central oficial de links com inscricoes, programacao, videos e redes sociais.",
+    "avatarUrl": "Logo_SC_2025_DVPF.svg",
+    "location": "Ilha do Fundao - UFRJ"
+  },
+  "header": {
+    "badge": "Central de Links",
+    "title": "Tudo da Semana da Computacao em um lugar",
+    "subtitle": "Pagina estilo linktree com cards de links, destaques, videos e grids personalizaveis via JSON.",
+    "announcement": "Submissoes para apresentar em 2026 ate 23:59 do dia 09/03/2026.",
+    "heroVideoUrl": "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  },
+  "primaryLinks": [
+    {
+      "label": "Inscricao no Even3",
+      "subtitle": "Inscreva-se como participante",
+      "url": "https://www.even3.com.br/ix-semana-da-computacao-ufrj-2026/",
+      "icon": "ticket"
+    },
+    {
+      "label": "Inscricoes para Apresentar",
+      "subtitle": "Formulario aberto ate 09/03/2026",
+      "url": "https://forms.gle/WQqS2bn8137Xvnz47",
+      "icon": "mic"
+    },
+    {
+      "label": "Instagram Oficial",
+      "subtitle": "Novidades da semana",
+      "url": "https://www.instagram.com/semanadacomputacaoufrj/",
+      "icon": "instagram"
+    }
+  ],
+  "sections": [
+    {
+      "id": "destaques",
+      "title": "Destaques",
+      "subtitle": "Principais chamadas da edicao.",
+      "layout": "grid",
+      "cards": [
+        {
+          "id": "apresentar-2026",
+          "type": "featured",
+          "title": "Call for Talks 2026",
+          "description": "Envie sua proposta e participe da programacao de 23 a 27 de marco de 2026.",
+          "meta": "Prazo final: 09/03/2026 - 23:59",
+          "url": "https://forms.gle/WQqS2bn8137Xvnz47",
+          "ctaLabel": "Enviar proposta",
+          "icon": "mic"
+        },
+        {
+          "id": "programacao",
+          "type": "link",
+          "title": "Programacao da Edicao 2026",
+          "description": "Confira horario, trilhas e palestrantes.",
+          "url": "/2026#programacao",
+          "ctaLabel": "Ver programacao",
+          "icon": "calendar"
+        },
+        {
+          "id": "contato-edicao",
+          "type": "link",
+          "title": "Contato da Comissao",
+          "description": "Tire suas duvidas por e-mail com a equipe organizadora.",
+          "url": "mailto:semanadacomputacao@ic.ufrj.br",
+          "ctaLabel": "Enviar e-mail",
+          "icon": "mail"
+        }
+      ]
+    },
+    {
+      "id": "videos",
+      "title": "Videos",
+      "subtitle": "Cards com embed de YouTube e CTA para canal.",
+      "layout": "grid",
+      "cards": [
+        {
+          "id": "video-1",
+          "type": "video",
+          "title": "Mensagem de Abertura",
+          "description": "Assista ao video de boas-vindas da edicao.",
+          "videoUrl": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+          "icon": "youtube"
+        },
+        {
+          "id": "video-2",
+          "type": "video",
+          "title": "Highlights da Ultima Edicao",
+          "description": "Resumo rapido com melhores momentos.",
+          "videoUrl": "https://youtu.be/dQw4w9WgXcQ",
+          "icon": "video"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "title": "Contato e Redes",
+      "subtitle": "Use este card para canais oficiais e suporte.",
+      "layout": "list",
+      "cards": [
+        {
+          "id": "social-card",
+          "type": "contact",
+          "title": "Fale com a Comissao Organizadora",
+          "description": "Canal de duvidas sobre inscricoes, submissao e patrocinio.",
+          "email": "semanadacomputacao@ic.ufrj.br",
+          "links": [
+            {
+              "label": "Instagram",
+              "url": "https://www.instagram.com/semanadacomputacaoufrj/",
+              "icon": "instagram"
+            },
+            {
+              "label": "LinkedIn UFRJ",
+              "url": "https://www.linkedin.com/school/universidade-federal-do-rio-de-janeiro/",
+              "icon": "linkedin"
+            },
+            {
+              "label": "GitHub Organizacao",
+              "url": "https://github.com/semana-da-computacao",
+              "icon": "github"
+            }
+          ],
+          "icon": "users"
+        }
+      ]
+    }
+  ],
+  "footerNote": "Semana da Computacao UFRJ - central oficial de links e canais da organizacao.",
+  "seo": {
+    "title": "Links Oficiais | Semana da Computacao UFRJ",
+    "description": "Pagina de links da Semana da Computacao UFRJ com inscricoes, videos, redes sociais e contato.",
+    "keywords": "links, linktree, semana da computacao, UFRJ, inscricoes, youtube",
+    "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/links",
+    "ogImage": "Logo_SC_2025_DVPF.svg",
+    "twitterImage": "Logo_SC_2025_DVPF.svg",
+    "twitterCard": "summary_large_image",
+    "siteName": "Semana da Computacao UFRJ",
+    "ogType": "website"
+  }
+}

@@ -25,6 +25,16 @@
     "even3": "https://www.even3.com.br/seu-link-aqui/",
     "instagram": "https://www.instagram.com/seu-perfil/"
   },
+  "presentationSubmission": {
+    "title": "Inscrições para apresentar",
+    "description": "Texto curto para chamada de submissão de apresentações",
+    "deadline": "Ex: 23:59 do dia 09/03/2026",
+    "date": "Ex: 23 a 27 de março de 2026",
+    "time": "Ex: 9h às 17h",
+    "location": "Ex: Ilha do Fundão - UFRJ",
+    "contactEmail": "seuemail@dominio.com",
+    "formUrl": "https://forms.gle/seu-link-aqui"
+  },
   "assets": {
     "heroFallbackGif": "2026/bg-hero.gif",
     "heroRightImage": "2026/hero-right.png",

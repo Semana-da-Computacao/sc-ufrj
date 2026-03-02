@@ -65,6 +65,17 @@ export interface EventLinks {
   instagram: string;
 }
 
+export interface EventPresentationSubmission {
+  title: string;
+  description: string;
+  deadline: string;
+  date: string;
+  time: string;
+  location: string;
+  contactEmail: string;
+  formUrl: string;
+}
+
 export interface EventAssets {
   heroFallbackGif: string;
   heroRightImage: string;
@@ -118,6 +129,7 @@ export interface EventEditionData {
   hero: EventHero;
   eventInfo: EventInfo;
   links: EventLinks;
+  presentationSubmission: EventPresentationSubmission;
   assets: EventAssets;
   seo?: EventSeo;
   sponsors: EventSponsors;

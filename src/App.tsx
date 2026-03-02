@@ -5,6 +5,7 @@ import HomePage from "./pages/geral/HomePage";
 import Edicao2025Page from "./pages/edicao-2025";
 import Edicao2019Page from "./pages/edicao-2019";
 import Edicao2026Page from "./pages/edicao-2026";
+import LinksPage from "./pages/links";
 import Layout from "./components/layout/geral/Layout";
 import Layout2025 from "./pages/edicao-2025/layout/Layout2025";
 import Layout2026 from "./pages/edicao-2026/layout/Layout2026";
@@ -75,6 +76,7 @@ function App() {
       "/2025": `${import.meta.env.BASE_URL}2025/evento-2025.json`,
       "/2026": `${import.meta.env.BASE_URL}2026/evento-2026.json`,
       "/2019": `${import.meta.env.BASE_URL}2019/seo-2019.json`,
+      "/links": `${import.meta.env.BASE_URL}links/links.json`,
     };
     const source = jsonSourcesByPath[location.pathname];
 
@@ -195,6 +197,17 @@ function App() {
         siteName: "Semana da Computação UFRJ",
         ogType: "website",
       },
+      "/links": {
+        title: "Links Oficiais | Semana da Computação UFRJ",
+        description:
+          "Página central de links da Semana da Computação UFRJ com inscrições, vídeos, redes sociais e canais oficiais.",
+        canonicalUrl: `${siteBaseUrl}/links`,
+        ogImage: "Logo_SC_2025_DVPF.svg",
+        twitterImage: "Logo_SC_2025_DVPF.svg",
+        twitterCard: "summary_large_image",
+        siteName: "Semana da Computação UFRJ",
+        ogType: "website",
+      },
       "/admin": {
         title: "Admin | Semana da Computação UFRJ",
         description: "Área administrativa da Semana da Computação UFRJ.",
@@ -289,6 +302,7 @@ function App() {
           />
           <Route path="/parceiros" element={<div>Parceiros - Em breve</div>} />
           <Route path="/inscricao" element={<div>Inscrição - Em breve</div>} />
+          <Route path="/links" element={<LinksPage />} />
         </Route>
 
         <Route

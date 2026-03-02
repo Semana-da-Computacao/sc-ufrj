@@ -25,6 +25,16 @@
     "even3": "https://www.even3.com.br/ix-semana-da-computacao-ufrj-2026/",
     "instagram": "https://www.instagram.com/semanadacomputacaoufrj/"
   },
+  "presentationSubmission": {
+    "title": "Inscrições para apresentar",
+    "description": "Submeta sua apresentação para participar da programação da edição de 2026.",
+    "deadline": "23:59 do dia 09/03/2026",
+    "date": "23 a 27 de março de 2026",
+    "time": "9h às 17h",
+    "location": "Ilha do Fundão - UFRJ",
+    "contactEmail": "semanadacomputacao@ic.ufrj.br",
+    "formUrl": "https://forms.gle/WQqS2bn8137Xvnz47"
+  },
   "assets": {
     "heroFallbackGif": "https://images.steamusercontent.com/ugc/1690520848830870076/6D7F87B6843ED09744C2F1A0182AC499C6972699/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
     "heroRightImage": "2026/hero-right.png",
@@ -52,14 +62,14 @@
         "description": "Maior destaque da edição.",
         "brands": [
           {
-            "name": "NVIDIA",
-            "logoUrl": "2026/sponsors/nvidia-mock.png",
-            "website": "https://www.nvidia.com/"
+            "name": "Visagio",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/C4D22AQEYKhnIMdBqlg/feedshare-shrink_800/feedshare-shrink_800/0/1667824989251?e=2147483647&v=beta&t=Ya0ZhbFnuhtRJeN7AdWA53dFm34OsYDJV934jKEjEUQ",
+            "website": "https://www.visagio.com/"
           },
           {
-            "name": "Google Cloud",
-            "logoUrl": "2026/sponsors/google-cloud-mock.png",
-            "website": "https://cloud.google.com/"
+            "name": "Globo",
+            "logoUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXMxC897AsFtsH4PpLnVkphLaRbXVH-QJn4g&s",
+            "website": "https://www.globo.com/"
           }
         ]
       },
@@ -96,16 +106,6 @@
             "website": "https://vercel.com/"
           },
           {
-            "name": "DigitalOcean",
-            "logoUrl": "2026/sponsors/digitalocean-mock.png",
-            "website": "https://www.digitalocean.com/"
-          },
-          {
-            "name": "MongoDB",
-            "logoUrl": "2026/sponsors/mongodb-mock.png",
-            "website": "https://www.mongodb.com/"
-          },
-          {
             "name": "Figma",
             "logoUrl": "2026/sponsors/figma-mock.png",
             "website": "https://www.figma.com/"
@@ -115,29 +115,19 @@
     ],
     "partners": [
       {
-        "name": "UFRJ",
-        "logoUrl": "2026/sponsors/ufrj-mock.png",
+        "name": "Universidade Federal do Rio de Janeiro",
+        "logoUrl": "https://ufrj.br/wp-content/uploads/2024/02/negativa-horizontal-completa.png",
         "website": "https://ufrj.br/"
       },
       {
-        "name": "CCMN",
-        "logoUrl": "2026/sponsors/ccmn-mock.png",
-        "website": "https://www.ccmn.ufrj.br/"
+        "name": "Instituto de Computação",
+        "logoUrl": "https://ic.ufrj.br/svg/logo-ic.svg",
+        "website": "https://ic.ufrj.br/"
       },
       {
-        "name": "IEEE",
-        "logoUrl": "2026/sponsors/ieee-mock.png",
-        "website": "https://www.ieee.org/"
-      },
-      {
-        "name": "SBC",
-        "logoUrl": "2026/sponsors/sbc-mock.png",
-        "website": "https://www.sbc.org.br/"
-      },
-      {
-        "name": "NIC.br",
-        "logoUrl": "2026/sponsors/nicbr-mock.png",
-        "website": "https://nic.br/"
+        "name": "Parque Tecnológico",
+        "logoUrl": "https://parque.ufrj.br/wp-content/uploads/2023/07/ptufrj_logo_cor_rgb-02-300x169.png",
+        "website": "https://www.parque.ufrj.br/"
       }
     ]
   },

@@ -5,6 +5,7 @@ import type {
   EventDay,
   EventEditionData,
   EventPresenter,
+  EventPresentationSubmission,
   EventSeo,
   EventSponsorTier,
   EventSponsors,
@@ -168,6 +169,24 @@ function isSeo(value: unknown): value is EventSeo {
   );
 }
 
+function isPresentationSubmission(value: unknown): value is EventPresentationSubmission {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const submission = value as Record<string, unknown>;
+  return (
+    isString(submission.title) &&
+    isString(submission.description) &&
+    isString(submission.deadline) &&
+    isString(submission.date) &&
+    isString(submission.time) &&
+    isString(submission.location) &&
+    isString(submission.contactEmail) &&
+    isString(submission.formUrl)
+  );
+}
+
 function isStorySection(value: unknown): value is EventStorySection {
   if (!value || typeof value !== "object") {
     return false;
@@ -207,6 +226,7 @@ function isEventEditionData(value: unknown): value is EventEditionData {
   const hero = data.hero as Record<string, unknown> | undefined;
   const eventInfo = data.eventInfo as Record<string, unknown> | undefined;
   const links = data.links as Record<string, unknown> | undefined;
+  const presentationSubmission = data.presentationSubmission as Record<string, unknown> | undefined;
   const theme = data.theme as Record<string, unknown> | undefined;
   const assets = data.assets as Record<string, unknown> | undefined;
   const seo = data.seo as Record<string, unknown> | undefined;
@@ -232,6 +252,8 @@ function isEventEditionData(value: unknown): value is EventEditionData {
     !!links &&
     isString(links.even3) &&
     isString(links.instagram) &&
+    !!presentationSubmission &&
+    isPresentationSubmission(presentationSubmission) &&
     !!assets &&
     isString(assets.heroFallbackGif) &&
     isString(assets.heroRightImage) &&
@@ -256,6 +278,9 @@ function mergeEventEditionData(value: unknown): EventEditionData {
   const hero = isObject(value.hero) ? value.hero : {};
   const eventInfo = isObject(value.eventInfo) ? value.eventInfo : {};
   const links = isObject(value.links) ? value.links : {};
+  const presentationSubmission = isObject(value.presentationSubmission)
+    ? value.presentationSubmission
+    : {};
   const assets = isObject(value.assets) ? value.assets : {};
   const seo = isSeo(value.seo) ? value.seo : defaultEvent2026Data.seo;
   const sponsors = isSponsors(value.sponsors) ? value.sponsors : defaultEvent2026Data.sponsors;
@@ -301,6 +326,32 @@ function mergeEventEditionData(value: unknown): EventEditionData {
       instagram: isString(links.instagram)
         ? links.instagram
         : defaultEvent2026Data.links.instagram,
+    },
+    presentationSubmission: {
+      title: isString(presentationSubmission.title)
+        ? presentationSubmission.title
+        : defaultEvent2026Data.presentationSubmission.title,
+      description: isString(presentationSubmission.description)
+        ? presentationSubmission.description
+        : defaultEvent2026Data.presentationSubmission.description,
+      deadline: isString(presentationSubmission.deadline)
+        ? presentationSubmission.deadline
+        : defaultEvent2026Data.presentationSubmission.deadline,
+      date: isString(presentationSubmission.date)
+        ? presentationSubmission.date
+        : defaultEvent2026Data.presentationSubmission.date,
+      time: isString(presentationSubmission.time)
+        ? presentationSubmission.time
+        : defaultEvent2026Data.presentationSubmission.time,
+      location: isString(presentationSubmission.location)
+        ? presentationSubmission.location
+        : defaultEvent2026Data.presentationSubmission.location,
+      contactEmail: isString(presentationSubmission.contactEmail)
+        ? presentationSubmission.contactEmail
+        : defaultEvent2026Data.presentationSubmission.contactEmail,
+      formUrl: isString(presentationSubmission.formUrl)
+        ? presentationSubmission.formUrl
+        : defaultEvent2026Data.presentationSubmission.formUrl,
     },
     assets: {
       heroFallbackGif: isString(assets.heroFallbackGif)

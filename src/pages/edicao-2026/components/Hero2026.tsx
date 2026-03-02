@@ -38,7 +38,7 @@ export function Hero2026({ data }: Hero2026Props) {
         src={heroImage}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-4 bottom-0 z-0 hidden h-[78%] max-h-[520px] w-auto opacity-70 md:block"
+        className="pointer-events-none absolute right-4 bottom-0 z-0 hidden h-[78%] max-h-[520px] w-auto opacity-40 md:block"
       />
 
       <div className="relative z-20 container mx-auto px-4 py-16 md:py-20">
@@ -49,7 +49,7 @@ export function Hero2026({ data }: Hero2026Props) {
           <h1 className="tlou-title text-3xl sm:text-5xl lg:text-6xl font-black leading-tight">
             {data.hero.title}
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-stone-200/90 max-w-2xl mx-auto tlou-body">
+          <p className="mt-4 text-base sm:text-lg font-black text-stone-200/90 max-w-2xl md:mx-0 mx-auto tlou-body">
             {data.hero.description}
           </p>
 
