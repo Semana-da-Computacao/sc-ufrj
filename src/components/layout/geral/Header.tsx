@@ -24,7 +24,6 @@ export default function Header() {
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <Link to="/2026">Edição 2026</Link>
             <Link to="/2025">Edição 2025</Link>
-            <Link to="/2019">Edição 2019</Link>
             <Link to="/#sobre">Sobre</Link>
             <Link to="/#comissao">Comissão</Link>
             <Link to="/#faq">FAQ</Link>
