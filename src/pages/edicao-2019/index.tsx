@@ -38,13 +38,6 @@ const interests = [
   "Deep Learning",
 ];
 
-const sponsorshipTiers = [
-  { name: "Cota Stark", value: "R$ 3.500" },
-  { name: "Cota Arryn", value: "R$ 2.500" },
-  { name: "Cota Greyjoy", value: "R$ 1.500" },
-  { name: "Cota Lannister", value: "R$ 750" },
-];
-
 export default function Edicao2019Page() {
   return (
     <main className="relative overflow-hidden">
@@ -190,50 +183,6 @@ export default function Edicao2019Page() {
               </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-24">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">Patrocínio 2019</h2>
-            <p className="mt-3 text-muted-foreground">
-              Estrutura de cotas utilizada na edição: divulgação de marca,
-              atividades na programação, kit do evento, stand e Tech Lounge.
-            </p>
-          </ScrollReveal>
-
-          <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {sponsorshipTiers.map((tier, index) => (
-              <ScrollReveal
-                key={tier.name}
-                className="event-card text-center"
-                delay={90 + index * 80}
-                direction={index % 2 === 0 ? "left" : "right"}
-              >
-                <p className="text-sm uppercase tracking-[0.15em] text-cyan-600 dark:text-cyan-400">
-                  {tier.name}
-                </p>
-                <p className="mt-3 text-3xl font-black">{tier.value}</p>
-                <p className="mt-2 text-xs text-muted-foreground">Investimento</p>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal className="mx-auto mt-10 max-w-4xl rounded-3xl border border-border/70 bg-card/80 p-6 text-center shadow-xl md:p-9">
-            <p className="text-sm text-muted-foreground sm:text-base">
-              A proposta da edição 2019 já está encerrada, mas os links de
-              inscrição desta página apontam para a plataforma oficial da SC no
-              Even3 para referência e novas edições.
-            </p>
-            <div className="mt-5 flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg">
-                <a href={even3Url} target="_blank" rel="noopener noreferrer">
-                  Acessar inscrições no Even3
-                </a>
-              </Button>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
     </main>

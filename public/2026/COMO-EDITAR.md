@@ -17,6 +17,7 @@ Arquivo principal: `public/2026/evento-2026.json`
 - `hero`: textos da dobra inicial da página.
 - `eventInfo`: data, local, status e resumo.
 - `assets`: GIF de fundo e imagens da Hero.
+- `seo`: metatags específicas da rota `/2026` (title, description, og:image, etc.).
 - `sponsors`: patrocinadores por nível (tipo 1/2/3) + parceiros.
 - `storySections`: seções com imagem + texto sobre o evento.
 - `days`: agenda por dia.
@@ -120,3 +121,19 @@ Guia completo: `public/2026/README.md`.
 ```
 
 `type` aceitos: `1`, `2`, `3`.
+
+## Estrutura de SEO
+
+```json
+{
+  "title": "Título SEO",
+  "description": "Descrição SEO",
+  "keywords": "palavra-chave 1, palavra-chave 2",
+  "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/2026",
+  "ogImage": "2026/seo-banner-2026.png",
+  "twitterImage": "2026/seo-banner-2026.png",
+  "twitterCard": "summary_large_image",
+  "siteName": "Semana da Computação UFRJ",
+  "ogType": "website"
+}
+```

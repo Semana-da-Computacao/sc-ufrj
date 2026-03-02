@@ -41,6 +41,26 @@ Exemplo:
 
 `heroFallbackGif` aceita caminho local e URL externa (`https`).
 
+## SEO da página 2026
+
+A rota `/2026` pode usar metatags específicas via bloco `seo` no `evento-2026.json`.
+
+```json
+"seo": {
+  "title": "Semana da Computação UFRJ 2026 | Programação Oficial",
+  "description": "Descrição da página 2026",
+  "keywords": "palavras-chave, separadas, por, vírgula",
+  "canonicalUrl": "https://semana-da-computacao.github.io/sc-ufrj/2026",
+  "ogImage": "2026/seo-banner-2026.png",
+  "twitterImage": "2026/seo-banner-2026.png",
+  "twitterCard": "summary_large_image",
+  "siteName": "Semana da Computação UFRJ",
+  "ogType": "website"
+}
+```
+
+Banner social sugerido: `public/2026/seo-banner-2026.png` (1200x630).
+
 ## Fluxo recomendado
 
 1. Use `modelo-evento.json` como referência de estrutura.

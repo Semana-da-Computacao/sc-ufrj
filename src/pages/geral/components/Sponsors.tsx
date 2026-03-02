@@ -3,6 +3,17 @@ import ScrollReveal from "@/components/scroll-reveal";
 import { Link } from "react-router-dom";
 
 export default function Sponsors() {
+  const sponsors = [
+    { name: "NVIDIA", category: "Master" },
+    { name: "Google Cloud", category: "Master" },
+    { name: "Rocketseat", category: "Gold" },
+    { name: "AWS", category: "Gold" },
+    { name: "Alura", category: "Gold" },
+    { name: "Figma", category: "Silver" },
+    { name: "MongoDB", category: "Silver" },
+    { name: "Vercel", category: "Silver" },
+  ];
+
   return (
     <section id="parceiros" className="bg-muted/40 py-20 md:py-24">
       <div className="max-w-6xl mx-auto px-4">
@@ -16,31 +27,20 @@ export default function Sponsors() {
         </ScrollReveal>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-          {/* Adicione aqui os logos dos patrocinadores */}
-          <ScrollReveal
-            delay={70}
-            className="aspect-square bg-background rounded-2xl border border-border/70 shadow-sm flex items-center justify-center p-4 text-sm text-muted-foreground"
-          >
-            Logo Patrocinador 1
-          </ScrollReveal>
-          <ScrollReveal
-            delay={130}
-            className="aspect-square bg-background rounded-2xl border border-border/70 shadow-sm flex items-center justify-center p-4 text-sm text-muted-foreground"
-          >
-            Logo Patrocinador 2
-          </ScrollReveal>
-          <ScrollReveal
-            delay={190}
-            className="aspect-square bg-background rounded-2xl border border-border/70 shadow-sm flex items-center justify-center p-4 text-sm text-muted-foreground"
-          >
-            Logo Patrocinador 3
-          </ScrollReveal>
-          <ScrollReveal
-            delay={250}
-            className="aspect-square bg-background rounded-2xl border border-border/70 shadow-sm flex items-center justify-center p-4 text-sm text-muted-foreground"
-          >
-            Logo Patrocinador 4
-          </ScrollReveal>
+          {sponsors.map((sponsor, index) => (
+            <ScrollReveal
+              key={sponsor.name}
+              delay={70 + index * 45}
+              className="rounded-2xl bg-background border border-border/70 shadow-sm p-4 text-center"
+            >
+              <div className="h-16 rounded-xl bg-linear-to-br from-emerald-500/15 via-cyan-500/10 to-amber-500/15 border border-border/60 flex items-center justify-center text-sm font-semibold">
+                {sponsor.name}
+              </div>
+              <p className="mt-3 text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                {sponsor.category}
+              </p>
+            </ScrollReveal>
+          ))}
         </div>
 
         <ScrollReveal className="text-center mt-8" delay={300}>
