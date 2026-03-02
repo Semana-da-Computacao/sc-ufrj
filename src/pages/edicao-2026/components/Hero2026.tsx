@@ -56,7 +56,7 @@ export function Hero2026({ data }: Hero2026Props) {
             {data.hero.description}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-3">
             <Button asChild size="lg" className="bg-emerald-700 hover:bg-emerald-600 text-white">
               <a href={data.links.even3} target="_blank" rel="noopener noreferrer">
                 Inscreva-se no Even3
