@@ -77,6 +77,25 @@ Banner social sugerido: `public/2026/seo-banner-2026.png` (1200x630).
 - Cada sessão pode ter `trail` com ícone no canto do card para identificar a trilha.
 - `storySections` cria seções visuais com imagem + texto sobre o evento.
 
+## Embed do Instagram
+
+A página `/2026` agora tem uma seção de embed do Instagram.
+
+No bloco `links`:
+
+- `instagram`: link do perfil oficial (botão de acesso).
+- `instagramEmbed` (opcional): link do post/reel/perfil que será embutido na seção.
+
+Exemplo:
+
+```json
+"links": {
+  "even3": "https://www.even3.com.br/seu-link-aqui/",
+  "instagram": "https://www.instagram.com/seu-perfil/",
+  "instagramEmbed": "https://www.instagram.com/p/CODIGO_DO_POST/"
+}
+```
+
 Ou seja: aumentou o número de salas no JSON, a interface se adapta automaticamente.
 
 ## Patrocinadores e parceiros

@@ -24,6 +24,7 @@ export const defaultEvent2026Data: EventEditionData = {
   links: {
     even3: "https://www.even3.com.br/",
     instagram: "https://www.instagram.com/semanadacomputacaoufrj/",
+    instagramEmbed: "https://www.instagram.com/semanadacomputacaoufrj/",
   },
   presentationSubmission: {
     title: "Inscrições para apresentar",

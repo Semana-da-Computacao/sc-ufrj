@@ -23,7 +23,8 @@
   },
   "links": {
     "even3": "https://www.even3.com.br/seu-link-aqui/",
-    "instagram": "https://www.instagram.com/seu-perfil/"
+    "instagram": "https://www.instagram.com/seu-perfil/",
+    "instagramEmbed": "https://www.instagram.com/p/CODIGO_DO_POST/"
   },
   "presentationSubmission": {
     "title": "Inscrições para apresentar",

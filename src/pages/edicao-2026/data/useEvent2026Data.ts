@@ -252,6 +252,7 @@ function isEventEditionData(value: unknown): value is EventEditionData {
     !!links &&
     isString(links.even3) &&
     isString(links.instagram) &&
+    (links.instagramEmbed === undefined || isString(links.instagramEmbed)) &&
     !!presentationSubmission &&
     isPresentationSubmission(presentationSubmission) &&
     !!assets &&
@@ -326,6 +327,9 @@ function mergeEventEditionData(value: unknown): EventEditionData {
       instagram: isString(links.instagram)
         ? links.instagram
         : defaultEvent2026Data.links.instagram,
+      instagramEmbed: isString(links.instagramEmbed)
+        ? links.instagramEmbed
+        : defaultEvent2026Data.links.instagramEmbed,
     },
     presentationSubmission: {
       title: isString(presentationSubmission.title)

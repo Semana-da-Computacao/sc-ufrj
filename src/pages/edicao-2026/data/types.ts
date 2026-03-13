@@ -63,6 +63,7 @@ export interface EventInfo {
 export interface EventLinks {
   even3: string;
   instagram: string;
+  instagramEmbed?: string;
 }
 
 export interface EventPresentationSubmission {

@@ -9,13 +9,15 @@ Arquivo principal: `public/2026/evento-2026.json`
 3. Para criar nova sala, adicione um objeto em `tracks`.
 4. Para criar nova atividade, adicione um objeto em `sessions`.
 5. Link de inscrição oficial fica em `links.even3`.
-6. Caminhos de GIF/imagens ficam em `assets`.
-7. O arquivo oficial da página é `evento-2026.json`.
+6. Link do perfil fica em `links.instagram` e o embed em `links.instagramEmbed` (opcional).
+7. Caminhos de GIF/imagens ficam em `assets`.
+8. O arquivo oficial da página é `evento-2026.json`.
 
 ## Campos principais
 
 - `hero`: textos da dobra inicial da página.
 - `eventInfo`: data, local, status e resumo.
+- `links`: Even3, Instagram e embed opcional do Instagram.
 - `assets`: GIF de fundo e imagens da Hero.
 - `seo`: metatags específicas da rota `/2026` (title, description, og:image, etc.).
 - `sponsors`: patrocinadores por nível (tipo 1/2/3) + parceiros.

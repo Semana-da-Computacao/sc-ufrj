@@ -4,6 +4,7 @@ import Info2026 from "./components/Info2026";
 import StorySections2026 from "./components/StorySections2026";
 import Schedule2026 from "./components/Schedule2026";
 import Subscribe2026 from "./components/Subscribe2026";
+import InstagramEmbed2026 from "./components/InstagramEmbed2026";
 import { useEvent2026Data } from "./data/useEvent2026Data";
 import "./styles-2026.css";
 
@@ -18,6 +19,7 @@ export default function Edicao2026Page() {
           <Info2026 data={data} />
           <Sponsors2026 data={data} />
           <Schedule2026 data={data} />
+          <InstagramEmbed2026 data={data} />
           <StorySections2026 data={data} />
           <Subscribe2026 data={data} />
         </>

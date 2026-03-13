@@ -18,7 +18,8 @@
   },
   "links": {
     "even3": "https://www.even3.com.br/ix-semana-da-computacao-ufrj-2026/",
-    "instagram": "https://www.instagram.com/semanadacomputacaoufrj/"
+    "instagram": "https://www.instagram.com/semanadacomputacaoufrj/",
+    "instagramEmbed": "https://www.instagram.com/semanadacomputacaoufrj/"
   },
   "presentationSubmission": {
     "title": "Inscrições para apresentar",
@@ -31,7 +32,7 @@
     "formUrl": "https://forms.gle/WQqS2bn8137Xvnz47"
   },
   "assets": {
-    "heroFallbackGif": "2026/bg-hero.gif",
+    "heroFallbackGif": "2026/bg-hero.webp",
     "heroRightImage": "2026/hero-right.png",
     "zombieLeft": "2026/zombie-left.png",
     "zombieRight": "2026/zombie-right.png"
