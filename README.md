@@ -1,153 +1,238 @@
-# Semana da Computação — UFRJ (site)
+# SC-UFRJ
 
-Este repositório contém o site da Semana da Computação da UFRJ (projeto front-end), desenvolvido com React + TypeScript e Vite. O objetivo do site é apresentar informações do evento (quem somos, números, patrocinadores, galeria de fotos) e oferecer páginas dedicadas às edições (por exemplo `/edicao-2025`), com programação e CTA para compra/registro de ingressos.
+Sistema da **Semana da Computação da UFRJ** com:
 
-Este README explica como rodar o projeto localmente, como usar um fluxo de trabalho com Git Flow (criar feature e levar até `develop`) e descreve as bibliotecas importantes utilizadas.
+- API REST para gestão do evento
+- painel web para organização (admin/coordenadores)
+- fluxo de participante (cadastro, inscrição, check-in e certificados)
+- rotas públicas para exibição das edições publicadas
 
-## Requisitos
+## O que este projeto resolve
 
-- Node.js 18 LTS ou superior (recomendo 18.x ou 20.x)
-- npm (ou yarn/pnpm) — os exemplos abaixo usam npm
-- Git
+O SC-UFRJ centraliza a operação do evento em um único sistema:
 
-## Como rodar (desenvolvimento)
+- gestão de eventos por edição/ano
+- organização da programação por dias, locais e atividades
+- cadastro de palestrantes e estandes
+- controle de inscrições
+- check-in por QR Code
+- geração e validação de certificados com template HTML
 
-1. Instale dependências:
+## Arquitetura
 
-```powershell
-npm install
+Este repositório é dividido em dois projetos independentes:
+
+- `back/`: API em Node.js + Express + Prisma
+- `front/`: painel web em React + Vite + TypeScript
+
+Não há workspace de monorepo na raiz. Os comandos devem ser executados dentro de `back/` e `front/`.
+
+## Stack técnica
+
+### Backend (`back/`)
+
+- Node.js
+- Express
+- TypeScript
+- Prisma ORM
+- SQLite (desenvolvimento)
+- JWT + refresh token rotation
+- bcryptjs, qrcode, zod
+
+### Frontend (`front/`)
+
+- React 19
+- Vite
+- TypeScript
+- React Router
+- TanStack Query
+- Axios
+- Zustand
+- Tailwind CSS v4
+- shadcn/ui + Radix UI
+
+## Perfis de acesso
+
+- `ADMIN`: gestão completa (usuários, eventos, publicação, certificados, check-in, etc.)
+- `COORDINATOR`: gestão operacional do evento (programação, check-in, certificados)
+- `MEMBER`: participante (cadastro/login e inscrição)
+
+## Estrutura do repositório
+
+```text
+sc-ufrj/
+├── back/
+│   ├── prisma/
+│   │   ├── schema.prisma
+│   │   └── seed.ts
+│   └── src/
+│       ├── controllers/
+│       ├── middleware/
+│       ├── routes/
+│       ├── services/
+│       ├── app.ts
+│       └── server.ts
+├── front/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── lib/
+│   │   ├── store/
+│   │   └── App.tsx
+│   └── index.html
+└── README.md
 ```
 
-2. Rode o servidor de desenvolvimento (Vite):
+## Funcionalidades implementadas
 
-```powershell
+- autenticação com login, refresh token e logout
+- CRUD de eventos com publicação/despublicação
+- gestão da programação por dia/local/atividade
+- gestão de palestrantes e vínculo em atividades
+- gestão de estandes
+- inscrições com paginação e busca
+- check-in por QR Code (scanner de câmera + entrada manual)
+- templates de certificado e geração em lote por carga horária
+- validação pública de certificados por código
+- endpoints públicos para listar eventos publicados e detalhes por slug
+
+## Modelo de dados (resumo)
+
+Principais entidades do Prisma:
+
+- `User`
+- `RefreshToken`
+- `Event`
+- `EventDay`
+- `EventLocation`
+- `Activity`
+- `Speaker` + `ActivitySpeaker`
+- `Stand`
+- `EventRegistration`
+- `Attendance`
+- `Certificate`
+- `CertificateTemplate`
+- `Sponsor`
+
+## Endpoints principais
+
+### Auth
+
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `POST /api/auth/refresh`
+- `POST /api/auth/logout`
+- `GET /api/auth/me`
+
+### Eventos e programação
+
+- `GET /api/events`
+- `POST /api/events`
+- `GET /api/events/:id`
+- `PUT /api/events/:id`
+- `POST /api/events/:id/publish`
+- `POST /api/events/:eventId/days`
+- `POST /api/events/:eventId/days/:dayId/activities`
+- `POST /api/events/:eventId/speakers`
+- `POST /api/events/:eventId/stands`
+
+### Presença e certificados
+
+- `POST /api/attendance/checkin`
+- `POST /api/attendance/checkin/manual`
+- `GET /api/attendance/event/:eventId/summary`
+- `POST /api/certificates/templates`
+- `POST /api/certificates/generate`
+- `GET /api/certificates/validate/:code`
+
+### Público
+
+- `GET /api/public/events`
+- `GET /api/public/events/:slug`
+- `GET /api/public/certificates/validate/:code`
+
+## Como rodar localmente
+
+Abra dois terminais, um para o backend e outro para o frontend.
+
+### 1) Backend
+
+```bash
+cd back
+cp .env.example .env
+npm install
+npx prisma db push
 npm run dev
 ```
 
-3. Abra o navegador em http://localhost:5173 (o Vite mostrará a URL no terminal).
+API disponível em `http://localhost:3001`  
+Health check: `http://localhost:3001/health`
 
-4. Para build de produção:
+### 2) Frontend
 
-```powershell
+```bash
+cd front
+npm install
+npm run dev
+```
+
+Painel disponível em `http://localhost:5174`.
+
+### 3) Variáveis de ambiente
+
+#### Backend (`back/.env`)
+
+Baseado em `back/.env.example`:
+
+- `PORT`
+- `DATABASE_URL`
+- `JWT_ACCESS_SECRET`
+- `JWT_REFRESH_SECRET`
+- `JWT_ACCESS_EXPIRES_IN`
+- `JWT_REFRESH_EXPIRES_IN`
+- `FRONTEND_URL`
+- `PUBLIC_SITE_URL`
+- `UPLOAD_DIR`
+- `API_BASE_URL`
+
+#### Frontend (`front/.env`, opcional)
+
+Se quiser sobrescrever o endereço da API:
+
+```bash
+VITE_API_URL=http://localhost:3001/api
+```
+
+## Comandos úteis
+
+### Backend
+
+```bash
+npm run dev
+npm run build
+npm run start
+npm run db:migrate
+npm run db:generate
+npm run db:studio
+npm run db:seed
+```
+
+### Frontend
+
+```bash
+npm run dev
 npm run build
 npm run preview
+npm run lint
 ```
 
-## Estrutura útil do projeto
+## Status atual da branch (21/03/2026)
 
-- `src/` — código fonte React/TSX
-  - `pages/` — páginas do site (ex.: `HomePage.tsx`, `edicao-2025/`)
-  - `components/` — componentes reutilizáveis (UI)
-- `public/` — arquivos estáticos (favicon, imagens, GIFs, vídeos)
+Durante a análise deste repositório:
 
-Observação: a `Hero` da edição 2025 espera um GIF em `public/hero-2025.gif` (recomendado otimizar o GIF ou preferir WebP/MP4 para melhor performance).
+- `back`: `npm run build` executa com sucesso
+- `front`: `npm run build` falha por erros de tipagem/lint TypeScript
+- `back`: `npm run db:seed` falha por incompatibilidade no campo `speaker` em `prisma/seed.ts`
 
-## Bibliotecas importantes usadas
-
-- react (v19) / react-dom — biblioteca base para UI.
-- react-router-dom — roteamento (rotas: `/`, `/edicao-2025`, `/fotos`, `/parceiros`).
-- vite — bundler / dev server rápido.
-- typescript — tipagem estática.
-- tailwindcss — utilitários CSS (o projeto usa classes Tailwind).
-- @radix-ui/* — primitives acessíveis (dialog, dropdown, slot).
-- lucide-react — ícones.
-- clsx, class-variance-authority, tailwind-merge — utilitários para composição de classes.
-
-Essas dependências estão listadas no `package.json` do projeto.
-
-## Onde colocar o GIF do Hero (otimização)
-
-- Coloque o arquivo em `public/hero-2025.gif`.
-- Recomendações: reduzir o tamanho (preferível < 2MB), usar resolução adequada (ex.: 1920x1080) e considerar converter para WebP ou usar um MP4 curto para reduzir uso de banda.
-
-## Git Flow — instalar e usar (Guia rápido)
-
-Este projeto recomenda um fluxo de branches baseado em Git Flow (feature → develop → release → main). Abaixo explico como instalar o utilitário `git-flow` no Windows e a sequência de comandos para criar, trabalhar e finalizar uma feature.
-
-### Inicializar git-flow no repositório
-
-Abra o PowerShell na pasta do projeto:
-
-```powershell
-git flow init -d
-```
-
-O `-d` aceita as opções padrão (branch `main` como produção e `develop` como integração). Revise os nomes caso use outro padrão.
-
-### Fluxo recomendado (exemplo para adicionar uma feature)
-
-1) Crie a feature (ex: adicionar CTA no Hero):
-
-```powershell
-git flow feature start hero-cta
-```
-
-Isso criará uma branch local chamada `feature/hero-cta` baseada em `develop`.
-
-2) Desenvolva localmente, adicione commits:
-
-```powershell
-# editar arquivos
-git add .
-git commit -m "feat(hero): adicionar CTA e background animado"
-```
-
-3) (Opcional e recomendado) Empurre a branch para o remoto para abrir PR/CI:
-
-```powershell
-git push -u origin feature/hero-cta
-```
-
-4) Quando a feature estiver pronta e revisada, finalize-a com git-flow (faz merge para `develop` e remove a branch local):
-
-```powershell
-git flow feature finish hero-cta
-```
-
-5) Empurre `develop` para o remoto:
-
-```powershell
-git push origin develop
-```
-
-Observações:
-- `git flow feature finish` normalmente também cria um merge commit de `feature/xxx` em `develop` e remove a branch local; ele não apaga a branch remota automaticamente (se você tiver empurrado anteriormente, delete-a manualmente ou via UI do seu provedor após o merge).
-- Em repositórios que usam Pull Requests, é comum criar a branch (`git flow feature start ...`), empurrar (`git push -u origin feature/...`) e abrir um PR para `develop`. Após aprovação e merge pelo PR, pode-se apagar a branch remota e atualizar `develop` local.
-
-### Exemplo de fluxo alternativo (sem instalar git-flow)
-
-```powershell
-# criar branch a partir de develop
-git checkout develop
-git pull origin develop
-git checkout -b feature/hero-cta
-
-# desenvolver, commitar e empurrar para remoto
-git add .
-git commit -m "feat(hero): adicionar CTA"
-git push -u origin feature/hero-cta
-
-# abrir PR no GitHub/GitLab para merge em develop
-```
-
-Após merge do PR, atualize sua branch develop local:
-
-```powershell
-git checkout develop; git pull origin develop
-```
-
-## Boas práticas de commit e PR
-
-- Use mensagens de commit no formato: `type(scope): descrição` (ex.: `feat(hero): adicionar CTA de ingressos`).
-- Crie PRs pequenos e com descrição clara do que foi alterado.
-- Marque reviewers e adicione screenshots quando relevante.
-
-## Como adicionar uma nova feature (passo a passo rápido)
-
-1. Atualize `develop` local: `git checkout develop; git pull origin develop`.
-2. Crie a feature: `git flow feature start nome-da-feature` ou `git checkout -b feature/nome-da-feature`.
-3. Implemente a feature, rode `npm run dev` localmente para testar.
-4. Faça commits pequenos e descritivos.
-5. Empurre a branch: `git push -u origin feature/nome-da-feature`.
-6. Abra PR para `develop`. Depois de aprovado, faça merge.
-7. Atualize `develop` local: `git checkout develop; git pull origin develop`.
+Ou seja: o fluxo principal de desenvolvimento funciona via `npm run dev`, mas há pendências para build de produção do frontend e para seed do banco.

@@ -1,0 +1,298 @@
+// Prisma Schema - Semana da Computação UFRJ
+// Banco: SQLite para desenvolvimento
+// Roles: ADMIN | COORDINATOR | MEMBER
+// ActivityType: TALK | WORKSHOP | PANEL | KEYNOTE | COFFEE_BREAK | OTHER
+// CertType: PARTICIPATION | SPEAKER | COORDINATOR | ORGANIZER
+// SponsorTier: DIAMOND | GOLD | SILVER | BRONZE | SUPPORTER
+// StandCategory: COMPANY | UNIVERSITY | OPEN_SOURCE | GOVERNMENT | OTHER
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Usuários ─────────────────────────────────────────────────────────────────
+
+model User {
+  id          String   @id @default(cuid())
+  name        String
+  email       String   @unique
+  password    String
+  /// ADMIN | COORDINATOR | MEMBER
+  role        String   @default("MEMBER")
+  cpf         String?  @unique
+  phone       String?
+  institution String?
+  /// Token único — conteúdo do QR code gerado no cadastro
+  qrCodeToken String   @unique @default(cuid())
+  avatarUrl   String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  refreshTokens     RefreshToken[]
+  registrations     EventRegistration[]
+  attendances       Attendance[]
+  certificates      Certificate[]
+  coordinatedEvents EventCoordinator[]
+}
+
+// ─── Refresh Tokens ───────────────────────────────────────────────────────────
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// ─── Eventos ──────────────────────────────────────────────────────────────────
+
+model Event {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String?
+  year        Int
+  edition     Int?
+  startDate   DateTime
+  endDate     DateTime
+  isPublished Boolean  @default(false)
+  bannerUrl   String?
+  location    String?  // Local geral do evento (ex: "CT/UFRJ – Ilha do Fundão")
+  maxCapacity Int?     // Capacidade máxima de inscrições
+
+  // SEO — configurados pelo admin antes da publicação
+  seoTitle       String?
+  seoDescription String?
+  seoKeywords    String?
+  ogImage        String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  days                 EventDay[]
+  registrations        EventRegistration[]
+  certificates         Certificate[]
+  certificateTemplates CertificateTemplate[]
+  coordinators         EventCoordinator[]
+  sponsors             Sponsor[]
+  speakers             Speaker[]
+  stands               Stand[]
+}
+
+// ─── Coordenadores do evento ──────────────────────────────────────────────────
+
+model EventCoordinator {
+  id      String @id @default(cuid())
+  userId  String
+  eventId String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event   Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+}
+
+// ─── Palestrantes cadastrados no evento ───────────────────────────────────────
+// Registro centralizado de palestrantes — podem participar de múltiplas atividades
+
+model Speaker {
+  id          String   @id @default(cuid())
+  eventId     String
+  event       Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  name        String
+  title       String?  // Cargo/título (ex: "Engenheira de Software @ Google")
+  bio         String?
+  photoUrl    String?
+  email       String?
+  linkedin    String?
+  github      String?
+  website     String?
+  /// Horas confirmadas como palestrante (para certificado de palestrante)
+  confirmedAt DateTime?
+  createdAt   DateTime @default(now())
+
+  activities ActivitySpeaker[]
+}
+
+// ─── Junction: Atividade <-> Palestrante ──────────────────────────────────────
+// Permite múltiplos palestrantes por atividade (essencial para mesas redondas)
+
+model ActivitySpeaker {
+  id         String   @id @default(cuid())
+  activityId String
+  activity   Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  speakerId  String
+  speaker    Speaker  @relation(fields: [speakerId], references: [id], onDelete: Cascade)
+  /// Moderador da mesa redonda ou palestrante principal
+  role       String   @default("SPEAKER") // SPEAKER | MODERATOR | PANELIST
+
+  @@unique([activityId, speakerId])
+}
+
+// ─── Stands / Estandes ───────────────────────────────────────────────────────
+// Espaços físicos no evento para empresas, laboratórios, grupos de pesquisa etc.
+
+model Stand {
+  id           String   @id @default(cuid())
+  eventId      String
+  event        Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  name         String   // Nome do estande
+  company      String?  // Nome da empresa/instituição responsável
+  description  String?
+  logoUrl      String?
+  contactEmail String?
+  contactPhone String?
+  website      String?
+  /// COMPANY | UNIVERSITY | OPEN_SOURCE | GOVERNMENT | OTHER
+  category     String   @default("COMPANY")
+  /// Número/identificação do estande no mapa
+  standNumber  String?
+  location     String?  // Localização física (ex: "Hall B, posição 3")
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+}
+
+// ─── Dias do evento ───────────────────────────────────────────────────────────
+
+model EventDay {
+  id      String   @id @default(cuid())
+  eventId String
+  event   Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  date    DateTime
+  label   String?
+  order   Int      @default(0)
+
+  activities Activity[]
+  locations  EventLocation[]
+}
+
+// ─── Locais (salas/auditórios) dentro de um dia ───────────────────────────────
+
+model EventLocation {
+  id          String    @id @default(cuid())
+  name        String
+  capacity    Int?
+  description String?
+  building    String?   // Bloco/prédio (ex: "Bloco H")
+  floor       String?   // Andar
+  eventDayId  String
+  eventDay    EventDay  @relation(fields: [eventDayId], references: [id], onDelete: Cascade)
+
+  activities  Activity[]
+}
+
+// ─── Atividades ───────────────────────────────────────────────────────────────
+
+model Activity {
+  id            String         @id @default(cuid())
+  title         String
+  description   String?
+  /// TALK | WORKSHOP | PANEL | KEYNOTE | COFFEE_BREAK | OTHER
+  type          String         @default("TALK")
+  startTime     DateTime
+  endTime       DateTime
+  durationHours Float?
+  /// Vagas limitadas (null = sem limite, usado em workshops)
+  maxAttendees  Int?
+  /// Link para transmissão online, se houver
+  streamUrl     String?
+  /// Nível de dificuldade: BEGINNER | INTERMEDIATE | ADVANCED
+  level         String?
+  tags          String?        // JSON array serializado: ["Python","IA","Web"]
+  eventDayId    String
+  eventDay      EventDay       @relation(fields: [eventDayId], references: [id], onDelete: Cascade)
+  locationId    String?
+  location      EventLocation? @relation(fields: [locationId], references: [id])
+
+  attendances ActivitySpeaker[]
+  Attendance  Attendance[]
+}
+
+// ─── Inscrições no evento ─────────────────────────────────────────────────────
+
+model EventRegistration {
+  id           String   @id @default(cuid())
+  eventId      String
+  event        Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  registeredAt DateTime @default(now())
+  /// Status: PENDING | CONFIRMED | CANCELLED | WAITLIST
+  status       String   @default("CONFIRMED")
+
+  @@unique([eventId, userId])
+  @@index([eventId])
+  @@index([userId])
+}
+
+// ─── Presenças (check-in via QR code) ────────────────────────────────────────
+
+model Attendance {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId String
+  activity   Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  checkedAt  DateTime @default(now())
+  checkedBy  String?
+
+  @@unique([userId, activityId])
+  @@index([activityId])
+}
+
+// ─── Certificados ─────────────────────────────────────────────────────────────
+
+model Certificate {
+  id         String              @id @default(cuid())
+  userId     String
+  user       User                @relation(fields: [userId], references: [id])
+  eventId    String
+  event      Event               @relation(fields: [eventId], references: [id])
+  templateId String
+  template   CertificateTemplate @relation(fields: [templateId], references: [id])
+  issuedAt   DateTime            @default(now())
+  code       String              @unique @default(cuid())
+  totalHours Float               @default(0)
+  pdfUrl     String?
+
+  @@unique([userId, eventId, templateId])
+}
+
+// ─── Templates de certificado ─────────────────────────────────────────────────
+
+model CertificateTemplate {
+  id           String   @id @default(cuid())
+  name         String
+  eventId      String
+  event        Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  htmlTemplate String
+  minHours     Float    @default(0)
+  /// PARTICIPATION | SPEAKER | COORDINATOR | ORGANIZER
+  type         String   @default("PARTICIPATION")
+  createdAt    DateTime @default(now())
+
+  certificates Certificate[]
+}
+
+// ─── Patrocinadores ───────────────────────────────────────────────────────────
+
+model Sponsor {
+  id      String   @id @default(cuid())
+  name    String
+  logo    String?
+  website String?
+  /// DIAMOND | GOLD | SILVER | BRONZE | SUPPORTER
+  tier    String   @default("BRONZE")
+  eventId String
+  event   Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  order   Int      @default(0)
+}
